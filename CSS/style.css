@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'Suisse Intl thin';
+        src: url('font/Suisse Intl Mono/thin/SuisseIntlMono-Thin.eot') format('eot'),
+             url('font/Suisse Intl Mono/thin/SuisseIntlMono-Thin.svg') format('svg'),
+             url('font/Suisse Intl Mono/thin/SuisseIntlMono-Thin.ttf') format('ttf'),
+             url('font/Suisse Intl Mono/thin/SuisseIntlMono-Thin.woff') format('woff'),
+             url('font/Suisse Intl Mono/thin/SuisseIntlMono-Thin.woff2') format('woff2'),
+}
+@font-face {
+    font-family: 'Suisse Intl regular';
+        src: url('font/Suisse Intl Mono/regular/SuisseIntlMono-Regular.eot') format('eot'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Regular.svg') format('svg'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Regular.ttf') format('ttf'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Regular.woff') format('woff'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Regular.woff2') format('woff2'),
+}
+@font-face {
+    font-family: 'Suisse Intl bold';
+        src: url('font/Suisse Intl Mono/bold/SuisseIntlMono-Bold.eot') format('eot'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Bold.svg') format('svg'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Bold.ttf') format('ttf'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Bold.woff') format('woff'),
+             url('font/Suisse Intl Mono/regular/SuisseIntlMono-Bold.woff2') format('woff2'),
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.flex-display-center-center{
+    display: flex;
+    align-content: center; /* cross axis of container - V */
+    align-items: center; /* all children on cross axis - vertical center*/
+    justify-content: center; /* main axis of conatiner - H */
+}
+.flex-display-center-start{
+    display: flex;
+    align-content: center; /* cross axis of container - V */
+    align-items: center; /* all children on cross axis - vertical center*/
+    justify-content: flex-start; /* main axis of conatiner - H */
+}
+.flex-display-sa-start{
+    display: flex;
+    align-content: center; /* cross axis of container - V */
+    align-items: flex-start; /* all children on cross axis - vertical center*/
+    justify-content: space-around; /* main axis of conatiner - H */
+}
+.flex-display-sa-center{
+    display: flex;
+    align-content: center; /* cross axis of container - V */
+    align-items: center; /* all children on cross axis - vertical center*/
+    justify-content: space-around; /* main axis of conatiner - H */
+}
+.flex-display-sb-center{
+    display: flex;
+    align-content: center; /* cross axis of container - V */
+    align-items: center; /* all children on cross axis - vertical center*/
+    justify-content: space-between; /* main axis of conatiner - H */
+}
+.column{
+    flex-direction: column;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: aqua;
+    -webkit-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    width: 30px;
+    margin: 0 1px 0 0;
+    padding: 15px 0;
+    border-radius: 15px/8px;
+    -webkit-transition: width .5s ease;
+    transition: width .5s ease;
+    border: 1px solid;
+    writing-mode: vertical-rl;
+    justify-content: center
+}
+.active{
+    width: calc(100vw - 156px);
+}
+.green{
+    color: yellow;
+}
