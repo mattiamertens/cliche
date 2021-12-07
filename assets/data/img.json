@@ -268,14 +268,5 @@
         "stereotype": "S09",
         "rectangle": "CD05_P09R",
         "url": "https://i.ibb.co/t3RdyyZ/TB02-02.png"
-    },
-    {
-        "name": "CD05_P10",
-        "city": "MI",
-        "project": "CD",
-        "render": "CD05",
-        "disposition": 3,
-        "stereotype": "S09",
-        "rectangle": "CD05_P10R"
     }
 ]
