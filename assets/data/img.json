@@ -1,0 +1,281 @@
+[
+    {
+        "name": "CD01_P01",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S19",
+        "rectangle": "CD01_P01R",
+        "url": "https://i.ibb.co/QfDG8yc/CD01-P15.png"
+    },
+    {
+        "name": "CD01_P02",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S08",
+        "rectangle": "CD01_P02R",
+        "url": "https://i.ibb.co/9pdx5mk/CD01-P14.png"
+    },
+    {
+        "name": "CD01_P03",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S11",
+        "rectangle": "CD01_P03R",
+        "url": "https://i.ibb.co/fF3vHH9/CD01-P13.png"
+    },
+    {
+        "name": "CD01_P04",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S11",
+        "rectangle": "CD01_P04R",
+        "url": "https://i.ibb.co/Rv7dVkN/CD01-P12.png"
+    },
+    {
+        "name": "CD01_P05",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S10",
+        "rectangle": "CD01_P05R",
+        "url": "https://i.ibb.co/F3kfWwT/CD01-P11.png"
+    },
+    {
+        "name": "CD01_P06",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S15",
+        "rectangle": "CD01_P06R",
+        "url": "https://i.ibb.co/PwdYgGx/CD01-P10.png"
+    },
+    {
+        "name": "CD01_P06",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 1,
+        "stereotype": "S00",
+        "rectangle": "CD01_P07R",
+        "url": "https://i.ibb.co/DKZ1WFN/CD01-P09.png"
+    },
+    {
+        "name": "CD01_P08",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 2,
+        "stereotype": "S18",
+        "rectangle": "CD01_P08R",
+        "url": "https://i.ibb.co/fMV68L1/CD01-P08.png"
+    },
+    {
+        "name": "CD01_P09",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 2,
+        "stereotype": "S06",
+        "rectangle": "CD01_P09R",
+        "url": "https://i.ibb.co/K2yjzmY/CD01-P07.png"
+    },
+    {
+        "name": "CD01_P10",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 2,
+        "stereotype": "S10",
+        "rectangle": "CD01_P10R",
+        "url": "https://i.ibb.co/cLTdf0f/CD01-P06.png"
+    },
+    {
+        "name": "CD01_P11",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 2,
+        "stereotype": "S15",
+        "rectangle": "CD01_P11R",
+        "url": "https://i.ibb.co/QcHXk6b/CD01-P05.png"
+    },
+    {
+        "name": "CD01_P12",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 3,
+        "stereotype": "S03",
+        "rectangle": "CD01_P12R",
+        "url": "https://i.ibb.co/qMqHSQD/CD01-P04.png"
+    },
+    {
+        "name": "CD01_P13",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 3,
+        "stereotype": "S00",
+        "rectangle": "CD01_P13R",
+        "url": "https://i.ibb.co/JRyxjnL/CD01-P03.png"
+    },
+    {
+        "name": "CD01_P14",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 3,
+        "stereotype": "S00",
+        "rectangle": "CD01_P14R",
+        "url": "https://i.ibb.co/JzjXwkJ/CD01-P02.png"
+    },
+    {
+        "name": "CD01_P15",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD01",
+        "disposition": 3,
+        "stereotype": "S00",
+        "rectangle": "CD01_P15R",
+        "url": "https://i.ibb.co/pxV8p1c/CD01-P01.png"
+    },
+    {
+        "name": "CD03_P01",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD03",
+        "disposition": 1,
+        "stereotype": "S02",
+        "rectangle": "CD03_P01R",
+        "url": "https://i.ibb.co/1QxfWb9/TB02-P12.png"
+    },
+    {
+        "name": "CD03_P02",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD03",
+        "disposition": 2,
+        "stereotype": "S09",
+        "rectangle": "CD03_P02R",
+        "url": "https://i.ibb.co/JQ00rZS/TB02-P11.png"
+    },
+    {
+        "name": "CD03_P03",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD03",
+        "disposition": 3,
+        "stereotype": "S09",
+        "rectangle": "CD03_P03R",
+        "url": "https://i.ibb.co/z5PhWp8/TB02-P10.png"
+    },
+    {
+        "name": "CD05_P01",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 1,
+        "stereotype": "S16",
+        "rectangle": "CD05_P01R",
+        "url": "https://i.ibb.co/h9ZqTPb/TB02-P09.png"
+    },
+    {
+        "name": "CD05_P02",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 1,
+        "stereotype": "S00",
+        "rectangle": "CD05_P02R",
+        "url": "https://i.ibb.co/xD4y5GP/TB02-P08.png"
+    },
+    {
+        "name": "CD05_P03",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 1,
+        "stereotype": "S18",
+        "rectangle": "CD05_P03R",
+        "url": "https://i.ibb.co/KrTytDP/TB02-P07.png"
+    },
+    {
+        "name": "CD05_P04",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 2,
+        "stereotype": "S00",
+        "rectangle": "CD05_P04R",
+        "url": "https://i.ibb.co/y022Dwp/TB02-P06.png"
+    },
+    {
+        "name": "CD05_P05",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 2,
+        "stereotype": "S00",
+        "rectangle": "CD05_P05R",
+        "url": "https://i.ibb.co/HKTmj0L/TB02-P05.png"
+    },
+    {
+        "name": "CD05_P06",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 2,
+        "stereotype": "S12",
+        "rectangle": "CD05_P06R",
+        "url": "https://i.ibb.co/M9VfM7p/TB02-P04.png"
+    },
+    {
+        "name": "CD05_P07",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 2,
+        "stereotype": "S07",
+        "rectangle": "CD05_P07R",
+        "url": "https://i.ibb.co/f8mQvGM/TB02-P03.png"
+    },
+    {
+        "name": "CD05_P08",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 3,
+        "stereotype": "S09",
+        "rectangle": "CD05_P08R",
+        "url": "https://i.ibb.co/8Djk2tr/TB02-01.png"
+    },
+    {
+        "name": "CD05_P09",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 3,
+        "stereotype": "S09",
+        "rectangle": "CD05_P09R",
+        "url": "https://i.ibb.co/t3RdyyZ/TB02-02.png"
+    },
+    {
+        "name": "CD05_P10",
+        "city": "MI",
+        "project": "CD",
+        "render": "CD05",
+        "disposition": 3,
+        "stereotype": "S09",
+        "rectangle": "CD05_P10R"
+    }
+]
