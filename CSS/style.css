@@ -95,22 +95,20 @@
     line-height: 2.3vw;
     writing-mode: vertical-lr;
 }
-
+.hide-ghost{
+    display: none;
+}
 .active{
     flex: 1;
-    writing-mode: horizontal-tb;
     padding: 15px;
     z-index: 2;
 }
-.hide{
+.hide-title{
     opacity: 0;
 }
-.test{
-    background-color: khaki;
-}
 
-.green{
-    color: red;
+.show-title{
+    opacity: 1;
 }
 .compare{
     flex-basis: 100%;
