@@ -188,7 +188,7 @@
       transform: translateY(-2px);
     }
 }
-#categories-box{
+#bookworm-box{
     margin: 24px 0;
     flex-wrap: wrap;
 }

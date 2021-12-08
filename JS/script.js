@@ -14,13 +14,13 @@ $(".container").click(function(){
 
 
 // categories card generation
-data = d3.json("assets/data/img.json");
+bookworm = d3.json("assets/data/img.json");
 
 // Select the container where we will put our HTML elements
-const boxes = d3.select("#categories-box");
+let boxes = d3.select("#bookworm-box");
 
 // Load data
-data.then(function(data) {
+bookworm.then(function(data) {
     let box = boxes.selectAll(".box") // Inside our selection, select the available div elements
     .data(data)
     .enter() // Create new elements if the selection doesn't match the data
@@ -29,11 +29,15 @@ data.then(function(data) {
     .append("img") // Inside the previous selection, add a new HTML element
     .classed("box-img", true)
     .attr("src", function(d) { return d.url }); // Add an attribute to the HTML element. In this case, the src attribute sets the URL of the image we need to display.
+
+	// console.log(box)
+	$('.box').on('click', function(){
+		console.log('daje')
+	})
 });
 
-
-window.onclick = e => {
-    // console.log(e.target);  // to get the element
-    console.log(e.target.className);  // to get the element tag name alone
-	$(e.target).addClass('ccc');
-} 
+// window.onclick = e => {
+//     // console.log(e.target);  // to get the element
+//     console.log(e.target.className);  // to get the element tag name alone
+// 	// $(e.target).addClass('ccc');
+// } 
