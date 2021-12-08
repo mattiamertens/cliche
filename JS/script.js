@@ -30,9 +30,44 @@ bookworm.then(function(data) {
     .classed("box-img", true)
     .attr("src", function(d) { return d.url }); // Add an attribute to the HTML element. In this case, the src attribute sets the URL of the image we need to display.
 
-	// console.log(box)
+
 	$('.box').on('click', function(){
 		console.log('daje')
+		$(this).children().addClass('test')
+
+		$(this).children().each(function (index) {
+			if ($(this).attr('onclick') == null) {                    
+                     
+				$(this).click(function () {
+					$(this).attr('onclick');
+					var src = $(this).attr("src");
+					ShowLargeImage(src);
+
+					console.log('first event')
+				});
+				
+			}
+			// else {                    
+			// 	$(this).click(function () {    
+			// 		$(this).attr('onclick');                    
+			// 		var src = $(this).attr("src");
+			// 		ShowLargeImage(src);
+
+			// 		console.log('second event')
+			// 	});
+			// }
+		});
+		
+		$('.title').on('click', function () {
+			$('.modal-img').remove();
+			console.log('remove img')
+		});
+		
+		function ShowLargeImage(imagePath) {
+			$('body').append('<div class="modal-img"><img src="' + imagePath.replace("small","large") + '" /></div>');
+		}
+		
+
 	})
 });
 
@@ -41,3 +76,7 @@ bookworm.then(function(data) {
 //     console.log(e.target.className);  // to get the element tag name alone
 // 	// $(e.target).addClass('ccc');
 // } 
+
+$('.close-context').on('click', function(){
+	$('.modal-wrapper').toggleClass('visibility-toggle');
+})

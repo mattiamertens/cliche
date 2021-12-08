@@ -67,6 +67,12 @@
     align-items: center; /* all children on cross axis - vertical center*/
     justify-content: flex-start; /* main axis of conatiner - H */
 }
+.flex-display-start-center{
+    display: flex;
+    align-content: flex-start; /* cross axis of container - V */
+    align-items: flex-start; /* all children on cross axis - vertical center*/
+    justify-content: center; /* main axis of conatiner - H */
+}
 .flex-display-sa-start{
     display: flex;
     align-content: center; /* cross axis of container - V */
@@ -98,6 +104,43 @@
     flex-wrap: wrap;
     -webkit-transition: background-color .5s ease;
     transition: background-color .5s ease;
+}
+.modal-wrapper{
+    position: absolute;
+    border: 1px solid;
+    width: 520px;
+    height: 540px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 10;
+}
+.context-header{
+    display: flex;
+    border-bottom: 1px solid;
+    width: 100%;
+    font-size: 13px;
+}
+.context-title{
+    font-size: inherit;
+}
+.close-context{
+    font-family: Neurial Grotesk regular;
+    font-size: inherit;
+    position: absolute;
+    right: 1%;
+    line-height: 16px;
+    cursor: pointer;
+}
+.img-wrapper{
+    background-color: grey;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+.visible-toggle{
+    visibility: hidden;
 }
 .container{
     height: calc(100% - 30px);
@@ -188,7 +231,7 @@
       transform: translateY(-2px);
     }
 }
-#bookworm-box{
+.cat_box_wrapper{
     margin: 24px 0;
     flex-wrap: wrap;
 }
@@ -204,3 +247,25 @@
     max-height: 90%;
     margin: auto;
 }
+
+.test{
+    background-color: black;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    top: 0px;
+    left: 0px;   
+    display: flex;
+}
+.modal-img {
+    position: absolute;
+    background-color: white;
+    margin-left: 50%;
+    left: 0px;
+}
+ 
