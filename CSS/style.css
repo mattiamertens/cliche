@@ -47,6 +47,11 @@
              url('font/Neurial_Grotesk/bold/neurialgrotesk-bold.woff2') format('woff2');
 }
 
+:root {
+    --mono-font: Neurial Grotesk regular;
+    --sans-font: Suisse Intl regular;
+}
+
 *, body{
     box-sizing: border-box;
     margin: 0;
@@ -173,7 +178,7 @@
 }
 .active{
     flex: 1;
-    padding: 15px 20px 0;
+    padding: 15px 20px 0 48px;
     z-index: 2;
 }
 .hide-title{
@@ -188,8 +193,14 @@
 
 .section-title{
     font-size: 48px;
-    margin-bottom: 150px;
-    padding-left: 24px;
+    margin-bottom: 24px;
+}
+.num-title{
+
+}
+.elem-number{
+    font-size: 60px;
+    margin-bottom: 42px;
 }
 .about-text{
     font-family: Neurial Grotesk regular;
@@ -201,8 +212,7 @@
     margin-bottom: 32px;
 }
 .body-text{
-    font-family: Suisse Intl regular;
-    padding-left: 24px;
+    font-family: Neurial Grotesk regular;
 }
 
 .compare{
@@ -236,11 +246,14 @@
     flex-wrap: wrap;
 }
 .box{
-    background-color: #ededed;
+    /* background-color: #ededed; */
     width: 158px;
     height: 158px;
+    /* border: 1px solid; */
+    /* margin: -0.5px; */
+}
+.box:hover{
     border: 1px solid;
-    margin: -0.5px;
 }
 .box-img{
     max-width: 90%;
