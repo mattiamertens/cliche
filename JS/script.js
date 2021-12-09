@@ -64,7 +64,7 @@ bookworm.then(function(data) {
 		});
 		
 		function ShowLargeImage(imagePath) {
-			$('body').append('<div class="modal-img"><img src="' + imagePath.replace("small","large") + '" /></div>');
+			$('.img-wrapper').append('<div class="modal-img"><img src="' + imagePath.replace("small","large") + '" /></div>');
 		}
 		
 
