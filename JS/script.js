@@ -15,7 +15,6 @@ $(".container").click(function(){
 // Mouse hover detection
 let isMouseHover = false
 let hoverCheck = $('.container');
-
 hoverCheck.on('mouseenter', function(){
 	if (!$(this).hasClass('active')) {
 		$(this).addClass('focus')
@@ -24,17 +23,6 @@ hoverCheck.on('mouseenter', function(){
 hoverCheck.on('mouseleave', function(){
 	$(this).removeClass('focus')
 })
-
-
-// hoverCheck.addEventListener("mouseleave", function (event) {
-//   isMouseHover = false
-//   console.log(isMouseHover)
-// }, false);
-// hoverCheck.addEventListener("mouseover", function (event) {
-//   isMouseHover = true
-//   console.log(isMouseHover)
-// }, false);
-
 
 // categories card generation
 data = d3.json("assets/data/img.json");
