@@ -4,6 +4,8 @@
         "city": "MI",
         "project": "CD",
         "render": "CD01",
+        "type": "P",
+        "index": "01",
         "disposition": 1,
         "stereotype": "S19",
         "rectangle": "CD01_P01R",

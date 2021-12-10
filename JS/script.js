@@ -32,9 +32,9 @@ data.then(function(data) {
 	}
 	
 	var filtered = filterJSON(data, 'disposition', 1);
-	console.log(filtered);
+	// console.log(filtered);
 
-	console.log(data);
+	// console.log(data);
     let box = boxes.selectAll(".box") // Inside our selection, select the available div elements
     .data(filtered)
     .enter() // Create new elements if the selection doesn't match the data
@@ -42,7 +42,9 @@ data.then(function(data) {
     .classed("box flex-display-center-center", true)
     .append("img") // Inside the previous selection, add a new HTML element
     .classed("box-img", true)
-    .attr("src", function(d) { return d.url }); // Add an attribute to the HTML element. In this case, the src attribute sets the URL of the image we need to display.
+    .attr("src", function(d) { 
+		return 'assets/data/' + d.render + '_' + d.type + d.index + '.jpg'
+	}); // Add an attribute to the HTML element. In this case, the src attribute sets the URL of the image we need to display.
 	
 
 	$('.box').on('click', function(){
