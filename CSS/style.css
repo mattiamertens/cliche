@@ -164,6 +164,9 @@
     justify-content: flex-start;
     overflow-y: auto;
 }
+.focus{
+    box-shadow: inset 0px 0px 17px #AEFF00;
+}
 .wrapper div:nth-last-child(2){
     /* border-right: 1px solid; */
 }
