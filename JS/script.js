@@ -85,16 +85,25 @@ data.then(function(data) {
 			$('.project').text(project);
 			// $('.img-wrapper').css('background-image', "url('" + imagePath + "')");
 		}
-
+		
+		//CLOSE MODAL WINDOW
 		$('.close-context').on('click', function () {
 			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
 			$('.box').removeClass('in-focus')
 			var removed = document.getElementsByClassName('modal-img');
 			$(removed[0]).remove();
 		});
+		$(document).on('keyup',function(evt) {
+			if (evt.keyCode == 27) {
+			   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+				$('.box').removeClass('in-focus')
+				var removed = document.getElementsByClassName('modal-img');
+				$(removed[0]).remove();
+			}
+		});
+
 	})
 });
-
 
 // window.onclick = e => {
 //     // console.log(e.target);  // to get the element
