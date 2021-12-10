@@ -31,7 +31,7 @@ data.then(function(data) {
 		return result;
 	}
 	
-	var filtered = filterJSON(data, 'disposition', 1);
+	var filtered = filterJSON(data, 'name', 'CD01_P01');
 	// console.log(filtered);
 
 	// console.log(data);
@@ -48,45 +48,26 @@ data.then(function(data) {
 	
 
 	$('.box').on('click', function(){
-		console.log('daje');
 		$(this).children().addClass('test');
 		$('.modal-wrapper').removeClass('visibility-toggle');
 
 		$(this).children().each(function (index) {
-			if ($(this).attr('onclick') == null) {                    
-                     
-				$(this).click(function () {
-					$(this).attr('onclick');
-					var src = $(this).attr("src");
-					ShowLargeImage(src);
-				});
-				
-			}
-			// else {                    
-			// 	$(this).click(function () {    
-			// 		$(this).attr('onclick');                    
-			// 		var src = $(this).attr("src");
-			// 		ShowLargeImage(src);
-
-			// 		console.log('second event')
-			// 	});
-			// }
+			$(this).attr('onclick');
+			var src = $(this).attr("src");
+			var srcR = src.replace('.jpg', 'R.png');
+			ShowLargeImage(srcR);
 		});
 
-		
 		$('.close-context').on('click', function () {
 			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
-			// $('.modal-img').remove();
-			// $('.modal-img:nth-of-type(1)').remove(); //modal img remove
 			var removed = document.getElementsByClassName('modal-img');
 			$(removed[0]).remove();
 		});
 		
 		function ShowLargeImage(imagePath) {
-			$('.img-wrapper').append('<div class="modal-img"><img src="' + imagePath.replace("small","large") + '" /></div>');
+			// $('.img-wrapper').append('<div class="modal-img"><img src="' + imagePath + '" /></div>');
+			$('.img-wrapper').css('background-image', "url('" + imagePath + "')");
 		}
-		
-
 	})
 });
 
