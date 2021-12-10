@@ -55,30 +55,43 @@ data.then(function(data) {
     .classed("box-img", true)
     .attr("src", function(d) { 
 		return 'assets/data/' + d.render + '_' + d.type + d.index + '.jpg'
-	}); // Add an attribute to the HTML element. In this case, the src attribute sets the URL of the image we need to display.
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
 	
 
 	$('.box').on('click', function(){
-		$(this).children().addClass('test');
+		$(this).addClass('in-focus')
 		$('.modal-wrapper').removeClass('visibility-toggle');
+
+		var city = $(this).children().attr('data-city');
+		var project = $(this).children().attr('data-project');
 
 		$(this).children().each(function (index) {
 			$(this).attr('onclick');
 			var src = $(this).attr("src");
+			console.log(this)
 			var srcR = src.replace('.jpg', 'R.png');
 			ShowLargeImage(srcR);
 		});
+		
+		function ShowLargeImage(imagePath) {
+			$('.img-wrapper').prepend('<img class="modal-img" src="' + imagePath + '" />');
+			$('.city').text(city);
+			$('.project').text(project);
+			// $('.img-wrapper').css('background-image', "url('" + imagePath + "')");
+		}
 
 		$('.close-context').on('click', function () {
 			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+			$('.box').removeClass('in-focus')
 			var removed = document.getElementsByClassName('modal-img');
 			$(removed[0]).remove();
 		});
-		
-		function ShowLargeImage(imagePath) {
-			// $('.img-wrapper').append('<div class="modal-img"><img src="' + imagePath + '" /></div>');
-			$('.img-wrapper').css('background-image', "url('" + imagePath + "')");
-		}
 	})
 });
 
