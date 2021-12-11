@@ -1,7 +1,7 @@
 [
     {
-        "name": "CD01_P01",
         "city": "MI",
+        "name": "CD01_P01",
         "project": "CD",
         "render": "CD01",
         "type": "P",

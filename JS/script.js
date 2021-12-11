@@ -25,7 +25,7 @@ hoverCheck.on('mouseleave', function(){
 })
 
 // categories card generation
-data = d3.json("assets/data/img.json");
+data = d3.json("assets/data/data.json");
 
 // Select the container where we will put our HTML elements
 let boxes = d3.select("#bookworm-box");
@@ -42,8 +42,7 @@ data.then(function(data) {
 		return result;
 	}
 	
-	var filtered = filterJSON(data, 'name', 'CD01_P01');
-	// console.log(filtered);
+	var filtered = filterJSON(data, 'stereotype', 'S21');
 
 	// console.log(data);
     let box = boxes.selectAll(".box") // Inside our selection, select the available div elements
@@ -54,7 +53,7 @@ data.then(function(data) {
     .append("img") // Inside the previous selection, add a new HTML element
     .classed("box-img", true)
     .attr("src", function(d) { 
-		return 'assets/data/' + d.render + '_' + d.type + d.index + '.jpg'
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
 	})
 	.attr("data-project", function(d){
 		return d.project
