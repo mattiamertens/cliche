@@ -18,7 +18,7 @@
         "type": "P",
         "index": "02",
         "disposition": 2,
-        "stereotype": "S18",
+        "stereotype": "S16",
         "rectangle": "AR01_P02R"
     },
     {
@@ -84,7 +84,7 @@
         "type": "P",
         "index": "08",
         "disposition": 3,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "AR01_P08R"
     },
     {
@@ -150,7 +150,7 @@
         "type": "P",
         "index": "14",
         "disposition": 3,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "AR01_P14R"
     },
     {
@@ -381,7 +381,7 @@
         "type": "P",
         "index": "08",
         "disposition": 2,
-        "stereotype": "S18",
+        "stereotype": "S11",
         "rectangle": "CD01_P08R"
     },
     {
@@ -524,7 +524,7 @@
         "type": "P",
         "index": "03",
         "disposition": 1,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "CD05_P03R"
     },
     {
@@ -634,7 +634,7 @@
         "type": "P",
         "index": "03",
         "disposition": 3,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "GB01_P03R"
     },
     {
@@ -667,7 +667,7 @@
         "type": "P",
         "index": "07",
         "disposition": 2,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "GB01_P07R"
     },
     {
@@ -2383,7 +2383,7 @@
         "type": "P",
         "index": "12",
         "disposition": 2,
-        "stereotype": "S18",
+        "stereotype": "S00",
         "rectangle": "LO03_P12R"
     },
     {
