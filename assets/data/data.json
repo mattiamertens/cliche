@@ -6017,28 +6017,6 @@
         "rectangle": "TB02_P02R"
     },
     {
-        "name": "TB02_P03",
-        "city": "Milano",
-        "project": "Torre Botanica",
-        "render": "TB02",
-        "type": "P",
-        "index": "03",
-        "disposition": 1,
-        "stereotype": "S08",
-        "rectangle": "TB02_P03R"
-    },
-    {
-        "name": "TB02_P04",
-        "city": "Milano",
-        "project": "Torre Botanica",
-        "render": "TB02",
-        "type": "P",
-        "index": "04",
-        "disposition": 1,
-        "stereotype": "S02",
-        "rectangle": "TB02_P04R"
-    },
-    {
         "name": "TB02_P05",
         "city": "Milano",
         "project": "Torre Botanica",
@@ -6651,7 +6629,7 @@
         "type": "P",
         "index": "16",
         "disposition": 2,
-        "stereotype": "S08",
+        "stereotype": "S10",
         "rectangle": "VT06_P16R"
     },
     {
@@ -6662,7 +6640,7 @@
         "type": "P",
         "index": "17",
         "disposition": 2,
-        "stereotype": "S06",
+        "stereotype": "S09",
         "rectangle": "VT06_P17R"
     },
     {

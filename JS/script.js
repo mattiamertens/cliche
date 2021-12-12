@@ -630,10 +630,10 @@ data.then(function(data) {
 		var project = $(this).children().attr('data-project');
 
 		$(this).children().each(function (index) {
-			$(this).attr('onclick');
+			// $(this).attr('onclick');
 			var src = $(this).attr("src");
 			console.log(this)
-			var srcR = src.replace('.png', 'R.png');
+			var srcR = src.replace('.png', 'R.jpeg');
 			ShowLargeImage(srcR);
 		});
 		
