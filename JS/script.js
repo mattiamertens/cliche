@@ -623,8 +623,10 @@ data.then(function(data) {
 
 	// OPEN MODAL WINDOW
 	$('.box').on('click', function(){
-		$(this).addClass('in-focus')
-		$('.modal-wrapper').removeClass('visibility-toggle');
+		$(this).addClass('in-focus');
+		setTimeout(function() {
+			$('.modal-wrapper').removeClass('visibility-toggle');
+		}, 100)
 
 		var city = $(this).children().attr('data-city');
 		var project = $(this).children().attr('data-project');
@@ -641,7 +643,6 @@ data.then(function(data) {
 			$('.img-wrapper').prepend('<img class="modal-img" src="' + imagePath + '" />');
 			$('.city').text(city);
 			$('.project').text(project);
-			// $('.img-wrapper').css('background-image', "url('" + imagePath + "')");
 		}
 		
 		//CLOSE MODAL WINDOW
