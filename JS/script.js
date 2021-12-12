@@ -228,6 +228,396 @@ data.then(function(data) {
 		return d.city
 	});
 	
+	// 5G Enthusiast
+	function filterJSONEnthusiast(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONEnthusiast(data, 'stereotype', 'S03');
+
+    box = enthusiastBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Socks and sandals
+	function filterJSONSocks(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONSocks(data, 'stereotype', 'S10');
+
+    box = socksBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Freshmen
+	function filterJSONFreshmen(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONFreshmen(data, 'stereotype', 'S16');
+
+    box = freshmenBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// No pain no gain
+	function filterJSONGym(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONGym(data, 'stereotype', 'S21');
+
+    box = gymBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// A child
+	function filterJSONChild(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONChild(data, 'stereotype', 'S15');
+
+    box = childBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Hustler
+	function filterJSONHustler(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONHustler(data, 'stereotype', 'S20');
+
+    box = hustlerBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Shopaholic
+	function filterJSONShopaholic(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONShopaholic(data, 'stereotype', 'S01');
+
+    box = shopaholicBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Tree-hugger
+	function filterJSONTreehugger(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONTreehugger(data, 'stereotype', 'S13');
+
+    box = treehuggerBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Bookworm
+	function filterJSONBookworm(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONBookworm(data, 'stereotype', 'S04');
+
+    box = bookwormBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Place-older
+	function filterJSONOlder(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONOlder(data, 'stereotype', 'S11');
+
+    box = olderBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Soundcloud rapper
+	function filterJSONSoundcloud(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONSoundcloud(data, 'stereotype', 'S12');
+
+    box = soundcloudBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// PETA
+	function filterJSONPeta(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONPeta(data, 'stereotype', 'S19');
+
+    box = petaBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+	
+	// Futuristic
+	function filterJSONFuturistic(data, key, value) {
+		var result = [];
+	
+		for (var indicator in data) {
+			if (data[indicator][key] === value) {
+				result.push(data[indicator]);
+			}
+		}
+		return result;
+	}
+	var filtered = filterJSONFuturistic(data, 'stereotype', 'S17');
+
+    box = futuristicBoxes.selectAll(".box") // Inside our selection, select the available div elements
+    .data(filtered)
+    .enter() // Create new elements if the selection doesn't match the data
+    .append("div") // Append a new div for each new data point
+    .classed("box flex-display-center-center", true)
+    .append("img") // Inside the previous selection, add a new HTML element
+    .classed("box-img", true)
+    .attr("src", function(d) { 
+		return 'assets/data/SPRITE/' + d.render + '_' + d.type + d.index + '.png'
+	})
+	.attr("data-project", function(d){
+		return d.project
+	})
+	.attr("data-city", function(d){
+		return d.city
+	});
+
 
 
 
