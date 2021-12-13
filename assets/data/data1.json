@@ -1,0 +1,35 @@
+{"nodes":[
+    {
+        "name": "AR01_P01",
+        "city": "Milano",
+        "project": "Aria",
+        "render": "AR01",
+        "type": "P",
+        "index": "01",
+        "disposition": 1,
+        "stereotype": "S06",
+        "rectangle": "AR01_P01R"
+    },
+    {
+        "name": "AR01_P02",
+        "city": "Milano",
+        "project": "Aria",
+        "render": "AR01",
+        "type": "P",
+        "index": "02",
+        "disposition": 2,
+        "stereotype": "S16",
+        "rectangle": "AR01_P02R"
+    },
+    {
+        "name": "AR01_P03",
+        "city": "Milano",
+        "project": "Aria",
+        "render": "AR01",
+        "type": "P",
+        "index": "03",
+        "disposition": 3,
+        "stereotype": "S09",
+        "rectangle": "AR01_P03R"
+    }]
+}
