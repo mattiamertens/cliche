@@ -50,6 +50,7 @@
 :root {
     --sans-font: Neurial Grotesk regular;
     --mono-font: Suisse Intl regular;
+    --navbar-height: 40px;
 }
 
 *, body{
@@ -104,6 +105,47 @@ a {
     flex-direction: column;
 }
 
+.topnav{
+    width: 100%;
+    height:var(--navbar-height);
+    box-shadow: 0px 5px 15px lightgrey;
+    background-color: white;
+    position: sticky;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-title{
+    font-size: 20px;
+    margin-left: 10px;
+
+}
+.link-section{
+    display: flex;
+    margin-left: 5%;
+    width: 60%;
+}
+.link{
+    display: flex;
+}
+.link-2{
+    margin-left: 10%;
+}
+
+.nav-item3{
+    margin-right: 20px;
+}
+
+.not-active{
+    opacity: 0;
+}
+
+
+
+
+
 
 
 .wrapper{
@@ -117,8 +159,6 @@ a {
 .modal-wrapper{
     position: absolute;
     border: 1px solid;
-    width: 700px;
-    height: 600px;
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -132,6 +172,7 @@ a {
     font-size: 13px;
 }
 .context-title{
+    display: flex;
     font-size: inherit;
 }
 .close-context{
@@ -149,14 +190,26 @@ a {
     display: flex;
 }
 .img-wrapper{
-    width: 80%;
-    height: 80%;
-    margin: auto;
+    justify-content: center;
+    position: relative;
+    height: inherit;
 }
+
 .city{
-    margin: 34px 0 10px;
     font-family: Suisse Intl bold;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
+
+.project{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
 .visibility-toggle{
     visibility: hidden;
 }
@@ -173,6 +226,9 @@ a {
     border-right: 0px solid;
     justify-content: flex-start;
     overflow-y: auto;
+}
+.container.column:not(.active) {
+    overflow-y: hidden;
 }
 .focus{
     box-shadow: inset 0px 0px 17px #AEFF00;
@@ -292,15 +348,17 @@ a {
     display: flex;
 }
 .modal-img {
-    max-width: 100%;
-    max-height: 100%;
+    height: inherit;
+    width: inherit;
+    max-height: 700px;
+    max-width: 1300px;
 }
 
 /* COMPARE */
 
 #force-layout{
     width: 100vw;
-    height: 90vh;
+    height: calc(100vh - var(--navbar-height));
 }
 
 

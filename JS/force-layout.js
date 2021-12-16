@@ -112,9 +112,10 @@ const repelForce = d3.forceManyBody().strength(-90).distanceMin(10);
 const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
 
 
-const width = d3.select("#wall").node().offsetWidth *1.3
-const height = d3.select("#wall").node().offsetHeight *1.3
+const width = d3.select("#wall").node().offsetWidth
+const height = d3.select("#wall").node().offsetHeight 
 const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${height}`)
+const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`)
 const randomized = Math.random()
 
 const simulation = d3.forceSimulation()
@@ -142,7 +143,7 @@ function ticked() {
 // positions
 const xScale = d3.scalePoint().range([0,width])
 
-let node = svg.selectAll(".node")
+let node = g.selectAll(".node")
 
 // var node_drag = d3.drag()
 //         .on("dragstart", dragstart)
@@ -193,8 +194,8 @@ function update(data) {
     simulation.nodes(data)
     // simulation.force("x").x(d=>xScale(d.stereotype))
     
-    simulation.force("x").x(width/2)
-    simulation.force("y").y(height/2)
+    // simulation.force("x").x(width/2)
+    // simulation.force("y").y(height/2)
     simulation.alpha(1)
     simulation.restart()
     

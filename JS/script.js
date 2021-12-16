@@ -677,7 +677,6 @@ data.then(function(data) {
 		$(this).children().each(function (index) {
 			// $(this).attr('onclick');
 			var src = $(this).attr("src");
-			console.log(this)
 			var srcR = src.replace('.png', 'R.jpeg');
 			ShowLargeImage(srcR);
 		});
@@ -688,23 +687,41 @@ data.then(function(data) {
 			$('.project').text(project);
 		}
 		
-		//CLOSE MODAL WINDOW
-		$('.close-context').on('click', function () {
-			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
-			$('.box').removeClass('in-focus')
-			var removed = document.getElementsByClassName('modal-img');
-			$(removed[0]).remove();
-		});
-		$(document).on('keyup',function(evt) {
-			if (evt.keyCode == 27) {
-			   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+		//CLOSE MODAL WINDOW	
+		window.addEventListener("click", function(event) {
+			
+			$('.close-context').on('click', function () {
+				$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
 				$('.box').removeClass('in-focus')
 				var removed = document.getElementsByClassName('modal-img');
 				$(removed[0]).remove();
-			}
-		});
+			});
 
-	})
+			var alessio = event.target
+			
+			if($('div#luca').has(alessio).length==false){
+				$('.box').removeClass('in-focus')
+		
+				if($(".modal-wrapper").hasClass('visibility-toggle')==false){
+					if ($(alessio).hasClass('.modal-wrapper')==false){
+						
+						$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+						var removed = document.getElementsByClassName('modal-img');
+						$(removed[0]).remove();
+					}
+					
+				}
+			}
+			$(document).on('keyup',function(evt) {
+				if (evt.keyCode == 27) {
+				   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+					$('.box').removeClass('in-focus')
+					var removed = document.getElementsByClassName('modal-img');
+					$(removed[0]).remove();
+				}
+			});
+		});
+	});
 });
 
 // window.onclick = e => {
