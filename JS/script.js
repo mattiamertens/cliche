@@ -1,15 +1,19 @@
 $(document).ready(function(){
 	$('.container > .title').addClass('hide-title'); // hide horizontal title = collapsed card
+	$('.content-section').addClass('disabled')
 })
 
-$(".container").click(function(){
+$(".container").click(function(e){
 	$(this).addClass('active');
 	$(this).children(":first").addClass('hide-ghost'); // hide vertical title
-	$(this).children('.content-section').addClass('show-title'); //show horizontal = open card
+	$(this).children('.content-section').addClass('show-title').removeClass('disabled'); //show horizontal = open card
+
 
 	// Collapse others
 	$('.container').not(this).removeClass('active');
-	$('.container').not(this).children().removeClass('show-title hide-ghost'); // show vertical title again and hide horizontal
+	$('.container').not(this).children().removeClass('show-title hide-ghost').addClass('disabled'); // show vertical title again and hide horizontal
+	// $(!this).children('.content-section').addClass('disabled'); //show horizontal = open card
+
 })
 
 // Mouse hover detection
@@ -48,6 +52,26 @@ let soundcloudBoxes = d3.select("#soundcloud-box");
 let petaBoxes = d3.select("#peta-box");
 let futuristicBoxes = d3.select("#futuristic-box");
 
+let businessTxt = $(".business-number");
+let squadTxt = $(".squad-number");
+let loveyTxt = $(".lovey-number");
+let familyTxt = $(".family-number");
+let fridayTxt = $(".friday-number");
+let fashionTxt = $(".fashion-number");
+let enthusiastTxt = $(".enthusiast-number");
+let socksTxt = $(".socks-number");
+let freshmenTxt = $(".freshmen-number");
+let gymTxt = $(".gym-number");
+let childTxt = $(".child-number");
+let hustlerTxt = $(".hustler-number");
+let shopaholicTxt = $(".shopaholic-number");
+let treehuggerTxt = $(".treehugger-number");
+let bookwormTxt = $(".bookworm-number");
+let olderTxt = $(".older-number");
+let soundcloudTxt = $(".soundcloud-number");
+let petaTxt = $(".peta-number");
+let futuristicTxt = $(".futuristic-number");
+
 data.then(function(data) {
 	function filterJSONBusiness(data, key, value) {
 		var result = [];
@@ -77,6 +101,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	businessTxt.text(filtered.length)
 	
 	// SQUAD
 	function filterJSONSquad(data, key, value) {
@@ -107,6 +132,8 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	squadTxt.text(filtered.length)
+
 	
 	// LOVEY DOVEY
 	function filterJSONSquad(data, key, value) {
@@ -137,6 +164,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	loveyTxt.text(filtered.length)
 	
 	// FAMILY
 	function filterJSONSquad(data, key, value) {
@@ -167,6 +195,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	familyTxt.text(filtered.length)
 
 	// FRIDAY
 	function filterJSONSquad(data, key, value) {
@@ -197,6 +226,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	fridayTxt.text(filtered.length)
 	
 	// FASHION
 	function filterJSONSquad(data, key, value) {
@@ -227,6 +257,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	fashionTxt.text(filtered.length)
 	
 	// 5G Enthusiast
 	function filterJSONEnthusiast(data, key, value) {
@@ -257,6 +288,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	enthusiastTxt.text(filtered.length)
 	
 	// Socks and sandals
 	function filterJSONSocks(data, key, value) {
@@ -287,6 +319,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	socksTxt.text(filtered.length)
 	
 	// Freshmen
 	function filterJSONFreshmen(data, key, value) {
@@ -317,6 +350,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	freshmenTxt.text(filtered.length)
 	
 	// No pain no gain
 	function filterJSONGym(data, key, value) {
@@ -347,6 +381,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	gymTxt.text(filtered.length)
 	
 	// A child
 	function filterJSONChild(data, key, value) {
@@ -377,6 +412,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	childTxt.text(filtered.length)
 	
 	// Hustler
 	function filterJSONHustler(data, key, value) {
@@ -407,6 +443,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	hustlerTxt.text(filtered.length)
 	
 	// Shopaholic
 	function filterJSONShopaholic(data, key, value) {
@@ -437,6 +474,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	shopaholicTxt.text(filtered.length)
 	
 	// Tree-hugger
 	function filterJSONTreehugger(data, key, value) {
@@ -467,6 +505,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	treehuggerTxt.text(filtered.length)
 	
 	// Bookworm
 	function filterJSONBookworm(data, key, value) {
@@ -497,6 +536,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	bookwormTxt.text(filtered.length)
 	
 	// Place-older
 	function filterJSONOlder(data, key, value) {
@@ -527,6 +567,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	olderTxt.text(filtered.length)
 	
 	// Soundcloud rapper
 	function filterJSONSoundcloud(data, key, value) {
@@ -557,6 +598,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	soundcloudTxt.text(filtered.length)
 	
 	// PETA
 	function filterJSONPeta(data, key, value) {
@@ -587,6 +629,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	petaTxt.text(filtered.length)
 	
 	// Futuristic
 	function filterJSONFuturistic(data, key, value) {
@@ -617,6 +660,7 @@ data.then(function(data) {
 	.attr("data-city", function(d){
 		return d.city
 	});
+	futuristicTxt.text(filtered.length)
 
 
 

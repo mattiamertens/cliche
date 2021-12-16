@@ -48,8 +48,8 @@
 }
 
 :root {
-    --mono-font: Neurial Grotesk regular;
-    --sans-font: Suisse Intl regular;
+    --sans-font: Neurial Grotesk regular;
+    --mono-font: Suisse Intl regular;
 }
 
 *, body{
@@ -57,10 +57,11 @@
     margin: 0;
     padding: 0;
     font-family: Suisse Intl regular;
-    font-size: 1rem;
+    font-size: 0.92rem;
 }
-::-webkit-scrollbar {
-    display: none;
+a {
+    text-decoration: none;
+    color: black;
 }
 /* TEMPLATE */
 .flex-display-center-center{
@@ -134,7 +135,7 @@
     font-size: inherit;
 }
 .close-context{
-    font-family: Neurial Grotesk regular;
+    font-family: var(--sans-font);
     font-size: inherit;
     position: absolute;
     right: 1%;
@@ -148,7 +149,6 @@
     display: flex;
 }
 .img-wrapper{
-    /* background-color: grey; */
     width: 80%;
     height: 80%;
     margin: auto;
@@ -161,7 +161,7 @@
     visibility: hidden;
 }
 .container{
-    height: calc(100% - 30px);
+    height: 100%;
     display: flex;
     align-items: center;
     width: 2.3vw;
@@ -180,9 +180,6 @@
 }
 .in-focus{
     box-shadow: inset 0px 0px 7px #AEFF00;
-}
-.wrapper div:nth-last-child(2){
-    /* border-right: 1px solid; */
 }
 .ghost-title{
     position: absolute;
@@ -208,6 +205,9 @@
 .hide-ghost{
     display: none;
 }
+.disabled{
+    pointer-events: none;
+}
 .show-title{
     opacity: 1;
 }
@@ -224,16 +224,22 @@
     margin-bottom: 42px;
 }
 .about-text{
-    font-family: Neurial Grotesk regular;
+    font-family: var(--sans-font);
     font-size: 60px;
     line-height: 100%;
     padding-left: 24px;
 }
 .sub-title{
-    margin-bottom: 32px;
+    margin-bottom: 18px;
 }
 .body-text{
-    font-family: Neurial Grotesk regular;
+    font-family: var(--sans-font);
+    width: 95%;
+    margin-bottom: 12px;
+}
+.cat_box_wrapper{
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 .compare{
@@ -262,16 +268,9 @@
       transform: translateY(-2px);
     }
 }
-.cat_box_wrapper{
-    margin: 24px 0;
-    flex-wrap: wrap;
-}
 .box{
-    /* background-color: #ededed; */
     width: 158px;
     height: 158px;
-    /* border: 1px solid; */
-    /* margin: -0.5px; */
 }
 .box:hover{
     border: 1px solid;
@@ -295,4 +294,280 @@
 .modal-img {
     max-width: 100%;
     max-height: 100%;
+}
+
+/* COMPARE */
+
+#force-layout{
+    width: 100vw;
+    height: 90vh;
+}
+
+
+/* HOMEPAGE */
+
+.splash-wrapper{
+    height: 95vh;
+    width: 100vw;
+    padding-top: 15%;
+}
+
+#wall{
+    position: absolute;
+    top: 0%;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100%;
+}
+.label{
+    opacity: 0;
+}
+.label:hover{
+    opacity: 1;
+}
+
+.home-title-wrapper{
+    position: absolute;
+    padding: 2% 0 0 4.4%;
+}
+.home-title{
+    font-size: 60px;
+    margin-bottom: 6px;
+}
+.claim{
+    font-size: 14px;
+    margin-left: 1%;
+}
+.section-wrapper{
+    margin-top: -10%;
+    width: 90%;
+    justify-content: space-evenly;
+}
+.section{
+    width: 28%;
+    height: 44px;
+    background-color: white;
+    border: 1px solid;
+    z-index: 100;
+}
+.shadow-overlay{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 34px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 87.74%);
+}
+.main-wrapper{
+    width: 96vw;
+    margin: 0 auto;
+}
+.main-text{
+    font-family: Neurial Grotesk regular;
+    font-size: 32px;
+}
+.question{
+    margin-top: 40px;
+    max-width: 80%;
+}
+.question span{
+    font-family: Suisse Intl bold;
+}
+.home-img-wrapper{
+    margin: 40px 0 0 0;
+    position: relative;
+}
+.stacked-img{
+    max-height: 660px;
+}
+.hover-me{
+    position: absolute;
+    font-family: var(--sans-font);
+    z-index: 2;
+    top: 2%;
+    right: 2%;
+}
+.no-people{
+    position: absolute;
+}
+.no-people:hover{
+    opacity: 0;
+}
+
+
+
+.map-container{
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    height: 95vh;
+}
+
+.name_of_city{
+    margin-left: 62px;
+    font-family: Suisse Intl bold;
+    width: auto;
+    height:auto;
+    position: relative;
+    font-size: 20px;
+    display:table;
+    
+  }
+
+.name_of_project{
+    font-family: Suisse Intl regular;
+    font-size: 11px;
+    padding: 2px 5px 1px;
+    border:1px solid #000; 
+    position: relative;
+    text-align: center;
+    display: table;
+    margin-top: 15px;
+    margin-left: 100px;
+    transition: all .4s ease;
+}
+.name_of_project:hover{
+    box-shadow: inset 0px 0px 7px #AEFF00;
+}
+
+#milan_map{
+    position: absolute;
+    top: 25px;
+    right: 1%;
+    height: 95%;
+}
+
+.map{
+    max-width: 100%;
+    max-height: 100%;
+
+}
+
+.map_point{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translate(-50%, -50%);
+    background-color: #bbb;
+    border-radius: 50%;
+    border: 2px solid #000;
+    transition: all .4s ease;
+}
+
+.map_point_hover{
+    height: 30px;
+    width: 30px;
+    background-color: #aeff00;
+}
+
+#point_aria{
+    top: 51%;
+    left: 77%;
+}
+
+#point_co-inventing_doria{
+    top: 35%;
+    left: 71%;
+}
+
+#point_green_between{
+    top: 18%;
+    left: 87%;
+}
+
+#point_l_innesto{
+    top: 15%;
+    left: 73%;
+}
+
+#point_lambrate_streaming{
+    top: 34%;
+    left: 81%;
+}
+
+#point_loreto_open_community{
+    top: 33.5%;
+    left: 73.5%;
+}
+
+#point_milano_city_door{
+    top: 85%;
+    left: 49.2%;
+}
+
+#point_molecola{
+    top: 23%;
+    left: 50%;
+}
+
+#point_scalo_di_porta_romana{
+    top: 53%;
+    left: 71%;
+}
+
+#point_sei_milano{
+    top: 56%;
+    left: 34%;
+}
+
+#point_torre_botanica{
+    top: 34%;
+    left: 63%;
+}
+
+#point_vitae{
+    top: 62%;
+    left: 68%;
+}
+
+
+/* FOOTER */
+footer {
+    margin: 2rem 0;
+    padding: 0 1rem; 
+    grid-column: 1 / span 4;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+    font-size: 1rem;
+}
+
+footer * {
+    grid-column: span 1;
+}
+
+.logo {
+    display: grid;
+    grid-template-columns: repeat(2, 65px);
+    column-gap: 0.5rem;
+}
+
+.logo * {
+    grid-column: span 1;
+}
+
+.icon {
+    vertical-align: bottom;
+    padding-bottom: 0.6rem;
+}
+
+footer img {
+    height: 50px;
+    width: auto;
+}
+
+footer h1 {
+    margin: 0 0 1rem 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    list-style: none;
+    margin: 0;
+    line-height: 1.5;
 }
