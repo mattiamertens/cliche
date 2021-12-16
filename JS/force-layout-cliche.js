@@ -8,8 +8,17 @@ $('#position_label').on('click', function () {
   $('#position_filters').toggleClass('closed')
 });
 
+$('.filter_button').on('click', function(){
+  $(this).addClass('in-focus');
+  $(this).siblings().removeClass('in-focus');
+})
+
 // const repelForce = d3.forceManyBody().strength(-90).distanceMin(10);
 // const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
+
+const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
+const plane = [1, 2, 3]
+
 
 const width = d3.select("#force-layout").node().offsetWidth;
 const widthC = d3.select("#force-layout").node().offsetWidth / 1.3;
@@ -117,12 +126,13 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     return result;
   }
 
+
+
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria");
 
   $('#button_aria').on('click', function () {
     update(filteredAria)
-    console.log('Aria')
   })
 
   // Co-inventing Doria
@@ -202,30 +212,31 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     update(filteredVitae)
   })
   
+
+
   // Background
   var filteredBg = filterJSON(data, "disposition", 3);
-
   $('#button_background').on('click', function () {
     update(filteredBg)
   })
 
   // Middle ground
   var filteredMg = filterJSON(data, "disposition", 2);
-
   $('#button_middleground').on('click', function () {
     update(filteredMg)
   })
   
   // Foreground
   var filteredFg = filterJSON(data, "disposition", 1);
-
   $('#button_foreground').on('click', function () {
     update(filteredFg)
   })
   
+
+
   // Reset all filters
   $('#reset_filters').on('click', function(){
     update(data)
+    $('.filter_button').removeClass('in-focus')
   })
-
 });
