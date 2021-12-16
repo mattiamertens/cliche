@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('.container > .title').addClass('hide-title'); // hide horizontal title = collapsed card
-	$('.content-section').addClass('disabled')
+	$('.content-section').slice(1).addClass('disabled');
 })
 
 $(".container").click(function(e){
@@ -12,7 +12,6 @@ $(".container").click(function(e){
 	// Collapse others
 	$('.container').not(this).removeClass('active');
 	$('.container').not(this).children().removeClass('show-title hide-ghost').addClass('disabled'); // show vertical title again and hide horizontal
-	// $(!this).children('.content-section').addClass('disabled'); //show horizontal = open card
 
 })
 
