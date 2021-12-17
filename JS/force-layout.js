@@ -116,7 +116,7 @@ const width = d3.select("#wall").node().offsetWidth
 const height = d3.select("#wall").node().offsetHeight 
 const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${height}`)
 const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`)
-const randomized = Math.random()
+const radius = 20;
 
 const simulation = d3.forceSimulation()
     .force("x", d3.forceX())
@@ -125,107 +125,78 @@ const simulation = d3.forceSimulation()
     .force('charge', d3.forceManyBody().strength(-16))
     // .force("repelForce", repelForce)
     // .force("attractForce", attractForce)
-    // .force('center', d3.forceCenter(window.innerWidth / 2.4 * randomized, window.innerHeight/3))
-    .on("tick", ticked)
-    
-    //.stop()
+    .on("tick", ticked);
 
-
-// console.log(randomized)
 function ticked() {
-    // console.log(simulation.alpha())
-    // node.attr("transform", d=>`translate(${d.x * Math.random()}, ${d.y})`)
     node.attr("transform", d=>`translate(${d.x}, ${d.y})`);
 }
 
 
-
 // positions
-const xScale = d3.scalePoint().range([0,width])
+// const xScale = d3.scalePoint().range([0,width])
+
+
 
 let node = g.selectAll(".node")
 
-// var node_drag = d3.drag()
-//         .on("dragstart", dragstart)
-//         .on("drag", dragmove)
-//         .on("dragend", dragend);
-
-//     function dragstart(d, i) {
-//         force.stop() // stops the force auto positioning before you start dragging
-//     }
-
-//     function dragmove(d, i) {
-//         d.px += d3.event.dx;
-//         d.py += d3.event.dy;
-//         d.x += d3.event.dx;
-//         d.y += d3.event.dy; 
-//         tick(); // this is the key to make it work together with updating both px,py,x,y on d !
-//     }
-
-//     function dragend(d, i) {
-//         d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
-//         tick();
-//         force.resume();
-//     }
 
 function update(data) {
-
 
     node = node.data(data, d=>d.id)
     node.exit().remove()
     node = node.enter().append("g").merge(node)
     node.append("image")
-        // .attr("x","-10")
-        // .attr("y","-10")
         .attr("width","20")
         .attr("height","20")
         .attr("href", d=>"./assets/data/SPRITE/"+d.name+".png")
-        
-        // .call(node_drag);
-        // .call(d3.drag()
-        
-        // .on("start",dragstarted)
-        // .on("drag",dragged)
-        // .on("end",dragended));
-        
-    
-    // console.log(data)
 
     simulation.nodes(data)
-    // simulation.force("x").x(d=>xScale(d.stereotype))
-    
-    // simulation.force("x").x(width/2)
-    // simulation.force("y").y(height/2)
     simulation.alpha(1)
     simulation.restart()
     
 }
 
+function dragsubject(d) {
+    var subject = simulation.find(event.x, event.y);
+    // return subject
+    return simulation.find(event.x, event.y);
+}
+
+function dragstarted(d) {
+    console.log('start')
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+}
+
+function dragged(d) {
+    console.log('progress')
+    // console.log(event.x)
+    // d3.select(node).attr('class', 'draggg')
+    .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
+    d.fx = d.x;
+    d.fy = d.y;
+}
+
+function dragended(d) {
+    console.log('end')
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+}
+
+svg.call(
+    d3.drag()
+        .subject(dragsubject)
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended)
+);
+
+
 d3.json("./assets/data/data-id.json").then(data=>{
     const xScaleDomain = data.map(d=>d.stereotype).sort()
-    // console.log(xScaleDomain)
-    xScale.domain(xScaleDomain)
-    // data = data.map(d=>{
-    //     const obj = {...d, _x: 0, _y:0}
-    //     return obj
-    // })
-    update(data);
+    // xScale.domain(xScaleDomain)
+    update(data);   
 })
 
-
-
-// function dragstarted(d){ 
-//     simulation.restart();
-//     simulation.alpha(1.0);
-//     d.fx = d.x;
-//     d.fy = d.y;
-// }
-// function dragged(d){
-//     d.fx = d3.event.x;
-//     d.fy = d3.event.y;
-// }
-// function dragended(d){
-//     d.fx = null;
-//     d.fy = null;
-//     simulation.alphaTarget(0.1);
-// }

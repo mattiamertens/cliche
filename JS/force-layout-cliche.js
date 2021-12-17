@@ -16,12 +16,12 @@ $('.filter_button').on('click', function(){
 // const repelForce = d3.forceManyBody().strength(-90).distanceMin(10);
 // const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
 
+// Multi choice filtering
 const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
 const plane = [1, 2, 3]
 
 
 const width = d3.select("#force-layout").node().offsetWidth;
-const widthC = d3.select("#force-layout").node().offsetWidth / 1.3;
 const height = d3.select("#force-layout").node().offsetHeight;
 const svg = d3
   .select("#force-layout")
@@ -32,8 +32,8 @@ const simulation_t = d3
   .forceSimulation()
   .force("x", d3.forceX())
   .force("y", d3.forceY())
-  // .force("collide", d3.forceCollide().radius(d => 10))
-  .force("charge", d3.forceManyBody().strength(-10))
+  .force("collide", d3.forceCollide().radius(d => 10))
+  .force("charge", d3.forceManyBody().strength(-25))
   // .force("repelForce", repelForce)
   // .force("attractForce", attractForce)
   .on("tick", ticked);
@@ -49,26 +49,26 @@ function ticked() {
 const cluster = d3.scalePoint().range([0, width]);
 const _positions = function (c, xORy) {
   const positions = {
-    S00: { x: 0.17*width, y: 0.65*height },
-    S01: { x: 0.15*width, y: 0.25*height },
-    S02: { x: 0.25*width, y: 0.30*height },
-    S03: { x: 0.35*width, y: 0.65*height },
-    S04: { x: 0.20*width, y: 0.50*height },
-    S05: { x: 0.60*width, y: 0.50*height },
-    S06: { x: 0.35*width, y: 0.45*height },
-    S07: { x: 0.60*width, y: 0.30*height },
-    S08: { x: 0.40*width, y: 0.30*height },
-    S09: { x: 0.80*width, y: 0.40*height },
-    S10: { x: 0.50*width, y: 0.75*height },
-    S11: { x: 0.85*width, y: 0.20*height },
-    S12: { x: 0.65*width, y: 0.75*height },
-    S13: { x: 0.75*width, y: 0.75*height },
-    S15: { x: 0.85*width, y: 0.65*height },
-    S16: { x: 0.45*width, y: 0.60*height },
-    S17: { x: 0.47*width, y: 0.45*height },
-    S19: { x: 0.75*width, y: 0.65*height },
-    S20: { x: 0.70*width, y: 0.65*height },
-    S21: { x: 0.85*width, y: 0.80*height },
+    S00: { x: -2*width, y: -2*height },
+    S01: { x: 0.40*width, y: 0.65*height },
+    S02: { x: 0.15*width, y: 0.67*height },
+    S03: { x: 0.15*width, y: 0.25*height },
+    S04: { x: 0.18*width, y: 0.50*height },
+    S05: { x: 0.79*width, y: 0.65*height },
+    S06: { x: 0.38*width, y: 0.47*height },
+    S07: { x: 0.40*width, y: 0.30*height },
+    S08: { x: 0.50*width, y: 0.57*height },
+    S09: { x: 0.63*width, y: 0.30*height },
+    S10: { x: 0.70*width, y: 0.49*height },
+    S11: { x: 0.82*width, y: 0.25*height },
+    S12: { x: 0.50*width, y: 0.38*height },
+    S13: { x: 0.60*width, y: 0.50*height },
+    S15: { x: 0.78*width, y: 0.45*height },
+    S16: { x: 0.27*width, y: 0.60*height },
+    S17: { x: 0.27*width, y: 0.45*height },
+    S19: { x: 0.72*width, y: 0.27*height },
+    S20: { x: 0.28*width, y: 0.33*height },
+    S21: { x: 0.65*width, y: 0.65*height },
   };
   return positions[c][xORy]
 };
@@ -81,18 +81,38 @@ function update(data) {
   node = node.enter().append("g").merge(node);
   node
     .append("image")
-    .attr("width", "20")
-    .attr("height", "20")
-    .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png");
+    .attr("width", "25")
+    .attr("height", "25")
+    .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png")
+    .attr("data-project", d => d.project)
+    .attr('data-name', d => d.name)
+    .attr('data-stereotype', d => d.stereotype)
 
-  node
-    .append("text")
-    .text((d) => d.id)
-    .classed("label", true)
-    .style("font-size", "10px")
-    .style("font-family", "sans-serif")
-    .style("text-anchor", "middle")
-    .style("dominant-baseline", "hanging");
+  // node
+  //   .append("text")
+  //   .text((d) => d.id)
+  //   .classed("label", true)
+  //   .style("font-size", "10px")
+  //   .style("text-anchor", "middle")
+
+
+  // OPEN MODAL WINDOW
+	$('g').on('mouseover', function(){
+    // $(this).addClass('in-focus');
+    // alert('adcd')
+    var project = $(this).children().attr('data-project')
+    var name = $(this).children().attr('data-name')
+    var stereotype = $(this).children().attr('data-stereotype')
+
+    $('.prova').removeClass('visibility-toggle')
+    .append("text") 
+    .text(project + name + stereotype)
+
+  });
+  $('g').on('mouseleave', function(){
+    $('.prova').addClass('visibility-toggle')
+  })
+
 
   simulation_t.nodes(data);
   simulation_t.force("x").x((d) => _positions(d.stereotype,"x"));
@@ -125,8 +145,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     return result;
   }
-
-
 
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria");

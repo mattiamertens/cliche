@@ -364,6 +364,14 @@ a {
     width: 100vw;
     height: calc(100vh - var(--navbar-height));
 }
+.prova{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-color: red;
+}
 
 
 .filter_buttons_space {
