@@ -1,3 +1,23 @@
+// Show navbar
+window.addEventListener('scroll',function(){
+  var lastScrollTop;
+  
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  console.log(scrollTop)
+  
+  if(scrollTop > 400){ 
+    $('.topnav').removeClass('hidden-nav')
+  }
+  
+  else{
+    $('.topnav').addClass('hidden-nav')
+    console.log('no')
+  }
+  
+  lastScrollTop = scrollTop;
+});
+
+
 //show names of projects
 $('#sd_vitae').on('mouseover', function(){
     $('#n_vitae').removeClass('mapitem_hidden');
