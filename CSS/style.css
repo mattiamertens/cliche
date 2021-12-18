@@ -169,7 +169,7 @@ a {
     border: 1px solid;
     top:50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -48%);
     background-color: white;
     z-index: 10;
 }
@@ -178,7 +178,7 @@ a {
     border-bottom: 1px solid;
     width: 100%;
     font-size: 13px;
-    height: 30px;
+    /* height: 30px; */
 }
 .context-title{
     display: flex;
@@ -359,7 +359,7 @@ a {
 .modal-img {
     height: inherit;
     width: inherit;
-    max-height: 700px;
+    max-height: 650px;
     max-width: 1300px;
 }
 

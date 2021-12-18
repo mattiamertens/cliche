@@ -703,48 +703,46 @@ data.then(function(data) {
 			
 			$('.city').text(city + ',');
 			$('.project').text(project);
-		}
+		}	
+	});
+	//CLOSE MODAL WINDOW	
+	window.addEventListener("click", function(event) {
+		var removeZoom = document.getElementsByClassName('img-magnifier-glass');
+		var removed = document.getElementsByClassName('modal-img');
 
-		
-		
-		//CLOSE MODAL WINDOW	
-		window.addEventListener("click", function(event) {
-			var removeZoom = document.getElementsByClassName('img-magnifier-glass');
-			var removed = document.getElementsByClassName('modal-img');
-
-			$('.close-context').on('click', function () {
-				$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
-				$('.box').removeClass('in-focus')
-				
-				$(removed[0]).remove();				
-				$(removeZoom[0]).remove();
-			});
-
-			var alessio = event.target
+		$('.close-context').on('click', function () {
+			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+			$('.box').removeClass('in-focus')
 			
-			if($('div#luca').has(alessio).length==false){
-				$('.box').removeClass('in-focus')
+			$(removed[0]).remove();				
+			$(removeZoom[0]).remove();
+		});
+
+		var alessio = event.target
 		
-				if($(".modal-wrapper").hasClass('visibility-toggle')==false){
-					if ($(alessio).hasClass('.modal-wrapper')==false){
-						
-						$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
-						var removed = document.getElementsByClassName('modal-img');
-						
-						$(removed[0]).remove();				
-						$(removeZoom[0]).remove();
-					}
+		if($('div#luca').has(alessio).length==false){
+			$('.box').removeClass('in-focus')
+	
+			if($(".modal-wrapper").hasClass('visibility-toggle')==false){
+				if ($(alessio).hasClass('.modal-wrapper')==false){
 					
-				}
-			}
-			$(document).on('keyup',function(evt) {
-				if (evt.keyCode == 27) {
-				   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
-					$('.box').removeClass('in-focus')
+					$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
 					var removed = document.getElementsByClassName('modal-img');
-					$(removed[0]).remove();
+					
+					$(removed[0]).remove();				
+					$(removeZoom[0]).remove();
 				}
-			});
+				
+			}
+		}
+		$(document).on('keyup',function(evt) {
+			if (evt.keyCode == 27) {
+			   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+				$('.box').removeClass('in-focus')
+				var removed = document.getElementsByClassName('modal-img');
+				$(removed[0]).remove();
+				$(removeZoom[0]).remove();
+			}
 		});
 	});
 });

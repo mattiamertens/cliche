@@ -13,9 +13,6 @@ $('.filter_button').on('click', function(){
   $(this).siblings().removeClass('in-focus');
 })
 
-// const repelForce = d3.forceManyBody().strength(-90).distanceMin(10);
-// const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
-
 // Multi choice filtering
 const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
 const plane = [1, 2, 3]
@@ -91,19 +88,6 @@ function update(data) {
     
 
 
-
-    // function filterJSONLab(data, key, value) {
-    //   var result = [];
-  
-    //   for (var indicator in data) {
-    //     if (data[indicator][key] === value) {
-    //       result.push(data[indicator]);
-    //     }
-    //   }
-    //   return result;
-    // }
-
-
     // Label
     // var filteredLabel = filterJSONLab(data, 'project', 'label')
     // console.log(filteredLabel)
@@ -132,7 +116,6 @@ function update(data) {
 
   // OPEN MODAL WINDOW
 	$('g').on('mouseover', function(){
-    // $(this).addClass('in-focus');
     // alert('adcd')
     var project = $(this).children().attr('data-project')
     var name = $(this).children().attr('data-name')
@@ -157,25 +140,17 @@ function update(data) {
   simulation_t.restart();
 }
 
-var zoom = d3.zoom()
-      .scaleExtent([1, 4])
-      .on('zoom', function(event) {
-          svg.attr('transform', event.transform);
-      console.log('AAA')
-});
-svg.call(zoom);
+// var zoom = d3.zoom()
+//       .scaleExtent([1, 4])
+//       .on('zoom', function(event) {
+//           svg.attr('transform', event.transform);
+//       console.log('AAA')
+// });
+// svg.call(zoom);
 
 
 data = d3.json("./assets/data/data-id.json").then((data) => {
-  // const xScaleDomain = data.map((d) => d.stereotype).sort();
-
-  // console.log(cluster.domain());
-
-  // data = data.map((d) => {
-  //   const obj = { ...d, _x: width / 2, _y: height / 2 };
-  //   return obj;
-  // });
-
+  
   update(data)
 
   function filterJSON(data, key, value) {
