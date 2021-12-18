@@ -1,114 +1,156 @@
-// File for Homepage
+//show names of projects
+$('#sd_vitae').on('mouseover', function(){
+    $('#n_vitae').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_vitae').addClass('mapitem_hidden');
+})
 
-$('#name_aria').on('mouseover', function(){
-    $("#point_aria").addClass("map_point_hover");
+
+$('#sd_aria').on('mouseover', function(){
+    $('#n_aria').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_aria').addClass('mapitem_hidden');
+})
+
+
+$('#sd_loreto_open_community').on('mouseover', function(){
+    $('#n_loreto_open_community').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_loreto_open_community').addClass('mapitem_hidden');
+})
+
+
+$('#sd_linnesto').on('mouseover', function(){
+    $('#n_linnesto').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_linnesto').addClass('mapitem_hidden');
+})
+
+
+$('#sd_green_between').on('mouseover', function(){
+    $('#n_green_between').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_green_between').addClass('mapitem_hidden');
+})
+
+
+$('#sd_co-inventing_doria').on('mouseover', function(){
+    $('#n_co-inventing_doria').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_co-inventing_doria').addClass('mapitem_hidden');
+})
+
+
+$('#sd_torre_botanica').on('mouseover', function(){
+    $('#n_torre_botanica').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_torre_botanica').addClass('mapitem_hidden');
+})
+
+
+$('#sd_milano_city_door').on('mouseover', function(){
+    $('#n_milano_city_door').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_milano_city_door').addClass('mapitem_hidden');
+})
+
+
+$('#sd_seimilano').on('mouseover', function(){
+    $('#n_seimilano').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_seimilano').addClass('mapitem_hidden');
+})
+
+
+$('#sd_scalo_di_porta_romana').on('mouseover', function(){
+    $('#n_scalo_di_porta_romana').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_scalo_di_porta_romana').addClass('mapitem_hidden');
+})
+
+
+$('#sd_lambrate_streaming').on('mouseover', function(){
+    $('#n_lambrate_streaming').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_lambrate_streaming').addClass('mapitem_hidden');
+})
+
+
+$('#sd_molecola').on('mouseover', function(){
+    $('#n_molecola').removeClass('mapitem_hidden');
+}).on('mouseleave', function(){
+    $('#n_molecola').addClass('mapitem_hidden');
+})
+
+
+//show private projecs
+$('#private_projects').on('mouseover', function(){
+    $('#sd_scalo_di_porta_romana').addClass('focus');
+    $('#n_scalo_di_porta_romana').removeClass('mapitem_hidden');
+    $('#sd_seimilano').addClass('focus');
+    $('#n_seimilano').removeClass('mapitem_hidden');
+    $('#sd_torre_botanica').addClass('focus');
+    $('#n_torre_botanica').removeClass('mapitem_hidden');
+    $('#sd_milano_city_door').addClass('focus');
+    $('#n_milano_city_door').removeClass('mapitem_hidden');
 })
 .on('mouseleave', function(){
-    $("#point_aria").removeClass("map_point_hover");
-});
-
-
-$('#name_co-inventing_doria').on('mouseover', function(){
-    $("#point_co-inventing_doria").addClass("map_point_hover");
-});
-
-$('#name_co-inventing_doria').on('mouseleave', function(){
-    $("#point_co-inventing_doria").removeClass("map_point_hover");
-});
-
-
-$('#name_green_between').on('mouseover', function(){
-    $("#point_green_between").addClass("map_point_hover");
-});
-
-$('#name_green_between').on('mouseleave', function(){
-    $("#point_green_between").removeClass("map_point_hover");
-});
-
-
-$('#name_l_innesto').on('mouseover', function(){
-    $("#point_l_innesto").addClass("map_point_hover");
-});
-
-$('#name_l_innesto').on('mouseleave', function(){
-    $("#point_l_innesto").removeClass("map_point_hover");
-});
-
-
-$('#name_lambrate_streaming').on('mouseover', function(){
-    $("#point_lambrate_streaming").addClass("map_point_hover");
-});
-
-$('#name_lambrate_streaming').on('mouseleave', function(){
-    $("#point_lambrate_streaming").removeClass("map_point_hover");
-});
-
-
-$('#name_loreto_open_community').on('mouseover', function(){
-    $("#point_loreto_open_community").addClass("map_point_hover");
-});
-
-$('#name_loreto_open_community').on('mouseleave', function(){
-    $("#point_loreto_open_community").removeClass("map_point_hover");
-});
-
-
-$('#name_milano_city_door').on('mouseover', function(){
-    $("#point_milano_city_door").addClass("map_point_hover");
-});
-
-$('#name_milano_city_door').on('mouseleave', function(){
-    $("#point_milano_city_door").removeClass("map_point_hover");
+    $('#sd_scalo_di_porta_romana').removeClass('focus');
+    $('#n_scalo_di_porta_romana').addClass('mapitem_hidden');
+    $('#sd_seimilano').removeClass('focus');
+    $('#n_seimilano').addClass('mapitem_hidden');
+    $('#sd_torre_botanica').removeClass('focus');
+    $('#n_torre_botanica').addClass('mapitem_hidden');
+    $('#sd_milano_city_door').removeClass('focus');
+    $('#n_milano_city_door').addClass('mapitem_hidden');
 })
 
 
-$('#name_molecola').on('mouseover', function(){
-    $("#point_molecola").addClass("map_point_hover");
+//show c40 projects
+$('#reinventing_cities').on('mouseover', function(){
+    $('#sd_molecola').addClass('focus');
+    $('#n_molecola').removeClass('mapitem_hidden');
+    $('#sd_lambrate_streaming').addClass('focus');
+    $('#n_lambrate_streaming').removeClass('mapitem_hidden');
+    $('#n_lambrate_streaming').addClass('move_n_lambrate_streaming');
+    $('#sd_linnesto').addClass('focus');
+    $('#n_linnesto').removeClass('mapitem_hidden');
+    $('#sd_loreto_open_community').addClass('focus');
+    $('#n_loreto_open_community').removeClass('mapitem_hidden');
+    $('#sd_green_between').addClass('focus');
+    $('#n_green_between').removeClass('mapitem_hidden');
+    $('#sd_aria').addClass('focus');
+    $('#n_aria').removeClass('mapitem_hidden');
+    $('#sd_vitae').addClass('focus');
+    $('#n_vitae').removeClass('mapitem_hidden');
+    $('#sd_co-inventing_doria').addClass('focus');
+    $('#n_co-inventing_doria').removeClass('mapitem_hidden');
+    $('#n_co-inventing_doria').addClass('move_n_co-inventing_doria');
 })
-
-$('#name_molecola').on('mouseleave', function(){
-    $("#point_molecola").removeClass("map_point_hover");
-})
-
-
-$('#name_scalo_di_porta_romana').on('mouseover', function(){
-    $("#point_scalo_di_porta_romana").addClass("map_point_hover");
-})
-
-$('#name_scalo_di_porta_romana').on('mouseleave', function(){
-    $("#point_scalo_di_porta_romana").removeClass("map_point_hover");
-})
-
-
-$('#name_sei_milano').on('mouseover', function(){
-    $("#point_sei_milano").addClass("map_point_hover");
-})
-
-$('#name_sei_milano').on('mouseleave', function(){
-    $("#point_sei_milano").removeClass("map_point_hover");
-})
-
-
-$('#name_torre_botanica').on('mouseover', function(){
-    $("#point_torre_botanica").addClass("map_point_hover");
-})
-
-$('#name_torre_botanica').on('mouseleave', function(){
-    $("#point_torre_botanica").removeClass("map_point_hover");
-})
-
-
-$('#name_vitae').on('mouseover', function(){
-    $("#point_vitae").addClass("map_point_hover");
-})
-
-$('#name_vitae').on('mouseleave', function(){
-    $("#point_vitae").removeClass("map_point_hover");
+.on('mouseleave', function(){
+    $('#sd_molecola').removeClass('focus');
+    $('#n_molecola').addClass('mapitem_hidden');
+    $('#sd_lambrate_streaming').removeClass('focus');
+    $('#n_lambrate_streaming').addClass('mapitem_hidden');
+    $('#n_lambrate_streaming').removeClass('move_n_lambrate_streaming');
+    $('#sd_linnesto').removeClass('focus');
+    $('#n_linnesto').addClass('mapitem_hidden');
+    $('#sd_loreto_open_community').removeClass('focus');
+    $('#n_loreto_open_community').addClass('mapitem_hidden');
+    $('#sd_green_between').removeClass('focus');
+    $('#n_green_between').addClass('mapitem_hidden');
+    $('#sd_aria').removeClass('focus');
+    $('#n_aria').addClass('mapitem_hidden');
+    $('#sd_vitae').removeClass('focus');
+    $('#n_vitae').addClass('mapitem_hidden');
+    $('#sd_co-inventing_doria').removeClass('focus');
+    $('#n_co-inventing_doria').addClass('mapitem_hidden');
+    $('#n_co-inventing_doria').removeClass('move_n_co-inventing_doria');
 })
 
 
 
-const repelForce = d3.forceManyBody().strength(-90).distanceMin(10);
+const repelForce = d3.forceManyBody().strength(-40).distanceMin(1);
 const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
 
 
@@ -119,11 +161,11 @@ const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`
 const radius = 20;
 
 const simulation = d3.forceSimulation()
-    .force("x", d3.forceX())
+    .force("x", d3.forceX(10))
     .force("y", d3.forceY())
     // .force("collide", d3.forceCollide().radius(d => 10))
     .force('charge', d3.forceManyBody().strength(-16))
-    // .force("repelForce", repelForce)
+    .force("repelForce", repelForce)
     // .force("attractForce", attractForce)
     .on("tick", ticked);
 
@@ -156,46 +198,46 @@ function update(data) {
     
 }
 
-function dragsubject(d) {
-    var subject = simulation.find(event.x, event.y);
-    // return subject
-    return simulation.find(event.x, event.y);
-}
+// function dragsubject(d) {
+//     var subject = simulation.find(event.x, event.y);
+//     // return subject
+//     return simulation.find(event.x, event.y);
+// }
 
-function dragstarted(d) {
-    console.log('start')
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-}
+// function dragstarted(d) {
+//     console.log('start')
+//     if (!event.active) simulation.alphaTarget(0.3).restart();
+//     d.fx = d.x;
+//     d.fy = d.y;
+// }
 
-function dragged(d) {
-    console.log('progress')
-    // console.log(event.x)
-    // d3.select(node).attr('class', 'draggg')
-    .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
-    d.fx = d.x;
-    d.fy = d.y;
-}
+// function dragged(d) {
+//     console.log('progress')
+//     // console.log(event.x)
+//     // d3.select(node).attr('class', 'draggg')
+//     .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
+//     d.fx = d.x;
+//     d.fy = d.y;
+// }
 
-function dragended(d) {
-    console.log('end')
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-}
+// function dragended(d) {
+//     console.log('end')
+//     if (!d3.event.active) simulation.alphaTarget(0);
+//     d.fx = null;
+//     d.fy = null;
+// }
 
-svg.call(
-    d3.drag()
-        .subject(dragsubject)
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended)
-);
+// svg.call(
+//     d3.drag()
+//         .subject(dragsubject)
+//         .on("start", dragstarted)
+//         .on("drag", dragged)
+//         .on("end", dragended)
+// );
 
 
 d3.json("./assets/data/data-id.json").then(data=>{
-    const xScaleDomain = data.map(d=>d.stereotype).sort()
+    // const xScaleDomain = data.map(d=>d.stereotype).sort()
     // xScale.domain(xScaleDomain)
     update(data);   
 })

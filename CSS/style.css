@@ -454,7 +454,7 @@ a {
 /* HOMEPAGE */
 
 .splash-wrapper{
-    height: 95vh;
+    height: 90vh;
     width: 100vw;
     padding-top: 15%;
 }
@@ -466,6 +466,7 @@ a {
     width: 100vw;
     height: 100%;
 }
+
 .label{
     opacity: 0;
 }
@@ -486,12 +487,12 @@ a {
     margin-left: 1%;
 }
 .section-wrapper{
-    margin-top: -10%;
+    margin-top: -7%;
     width: 90%;
-    justify-content: space-evenly;
 }
 .section{
     width: 28%;
+    margin: 0 7%;
     height: 44px;
     background-color: white;
     border: 1px solid;
@@ -540,131 +541,65 @@ a {
     opacity: 0;
 }
 
-
-
+/* MAP */
 .map-container{
     position: relative;
     width: 100%;
     margin-top: 40px;
     display: flex;
-    height: 95vh;
+    height: 100vh;
 }
-
-.name_of_city{
-    margin-left: 62px;
-    font-family: Suisse Intl bold;
-    width: auto;
-    height:auto;
-    position: relative;
-    font-size: 20px;
-    display:table;
-    
-  }
-
-.name_of_project{
-    font-family: Suisse Intl regular;
-    font-size: 11px;
-    padding: 2px 5px 1px;
-    border:1px solid #000; 
-    position: relative;
-    text-align: center;
-    display: table;
-    margin-top: 15px;
-    margin-left: 100px;
-    transition: all .4s ease;
+.milan-map-txt{
+    display: flex;
+    width: 35%;
 }
-.name_of_project:hover{
-    box-shadow: inset 0px 0px 7px #AEFF00;
+#map_container{
+    width: 65%;
 }
-
-#milan_map{
-    position: absolute;
-    top: 25px;
-    right: 1%;
-    height: 95%;
-}
-
-.map{
-    max-width: 100%;
+#Livello_1{
     max-height: 100%;
-
+}
+#mapbutton_container{
+    margin-top: 80px;
+}
+.map_button{
+    outline: 1px solid;
+    padding: 4px 5px;
+    margin: 10px 0;
+    width: fit-content;
+    font-family: Suisse Intl bold;
+    font-size: 11px;
+    cursor: default;
+}
+.mapitem_hidden{
+    display: none;
 }
 
-.map_point{
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    transform: translate(-50%, -50%);
-    background-color: #bbb;
-    border-radius: 50%;
-    border: 2px solid #000;
+.sd{
     transition: all .4s ease;
 }
+.sd:hover{
+    fill: #aeff00;
+    r: 10;
+}
+.focus{
+    fill: #aeff00;
+    r: 10;
+}
+
+.move_n_co-inventing_doria{
+    transform: translate(-3%, 6%);
+}
+
+.move_n_lambrate_streaming{
+    transform: translate(3%, 6%);
+}
+
 
 .map_point_hover{
     height: 30px;
     width: 30px;
     background-color: #aeff00;
-}
-
-#point_aria{
-    top: 51%;
-    left: 77%;
-}
-
-#point_co-inventing_doria{
-    top: 35%;
-    left: 71%;
-}
-
-#point_green_between{
-    top: 18%;
-    left: 87%;
-}
-
-#point_l_innesto{
-    top: 15%;
-    left: 73%;
-}
-
-#point_lambrate_streaming{
-    top: 34%;
-    left: 81%;
-}
-
-#point_loreto_open_community{
-    top: 33.5%;
-    left: 73.5%;
-}
-
-#point_milano_city_door{
-    top: 85%;
-    left: 49.2%;
-}
-
-#point_molecola{
-    top: 23%;
-    left: 50%;
-}
-
-#point_scalo_di_porta_romana{
-    top: 53%;
-    left: 71%;
-}
-
-#point_sei_milano{
-    top: 56%;
-    left: 34%;
-}
-
-#point_torre_botanica{
-    top: 34%;
-    left: 63%;
-}
-
-#point_vitae{
-    top: 62%;
-    left: 68%;
 }
 
 

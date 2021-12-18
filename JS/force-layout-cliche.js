@@ -23,8 +23,7 @@ const plane = [1, 2, 3]
 
 const width = d3.select("#force-layout").node().offsetWidth;
 const height = d3.select("#force-layout").node().offsetHeight;
-const svg = d3
-  .select("#force-layout")
+const svg = d3.select("#force-layout")
   .append("svg")
   .attr("viewBox", `0 0 ${width} ${height}`);
 
@@ -75,6 +74,8 @@ const _positions = function (c, xORy) {
 
 let node = svg.selectAll(".sprite");
 
+
+
 function update(data) {
   node = node.data(data, (d) => d.id);
   node.exit().remove();
@@ -87,6 +88,39 @@ function update(data) {
     .attr("data-project", d => d.project)
     .attr('data-name', d => d.name)
     .attr('data-stereotype', d => d.stereotype)
+    
+
+
+
+    // function filterJSONLab(data, key, value) {
+    //   var result = [];
+  
+    //   for (var indicator in data) {
+    //     if (data[indicator][key] === value) {
+    //       result.push(data[indicator]);
+    //     }
+    //   }
+    //   return result;
+    // }
+
+
+    // Label
+    // var filteredLabel = filterJSONLab(data, 'project', 'label')
+    // console.log(filteredLabel)
+
+    // label = label.data(filteredLabel, (d) => d.id);
+    // label.exit().remove();
+    // label = label.enter().append("g").merge(label);
+    // label
+    //   .append("image")
+    //   .attr("width", "100")
+    //   .attr("height", "50")
+    //   .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png")
+    //   .attr("data-project", d => d.project)
+    //   .attr('data-name', d => d.name)
+    //   .attr('data-stereotype', d => d.stereotype)
+
+
 
   // node
   //   .append("text")
@@ -123,6 +157,15 @@ function update(data) {
   simulation_t.restart();
 }
 
+var zoom = d3.zoom()
+      .scaleExtent([1, 4])
+      .on('zoom', function(event) {
+          svg.attr('transform', event.transform);
+      console.log('AAA')
+});
+svg.call(zoom);
+
+
 data = d3.json("./assets/data/data-id.json").then((data) => {
   // const xScaleDomain = data.map((d) => d.stereotype).sort();
 
@@ -145,6 +188,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     return result;
   }
+
 
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria");
