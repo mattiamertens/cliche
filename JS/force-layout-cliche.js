@@ -156,33 +156,53 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   function filterJSON(data, key, value) {
     var result = [];
 
-    for (var indicator in data) {
-      if (data[indicator][key] === value) {
-        result.push(data[indicator]);
+    for (var i in data) {
+      if (data[i][key] === value) {
+        result.push(data[i]);
       }
     }
     return result;
   }
 
+  var ariaC = false;
+  var doriaC = false;
+  var greenbC = false;
+  var innestoC = false;
+  var lambrateC = false;
+  var loretoC = false;
+  var citydC = false;
+  var molecolaC = false;
+  var romanaC = false;
+  var seimC = false;
+  var torrebC = false;
+  var vitaeC = false;
+
 
   // Aria
-  var filteredAria = filterJSON(data, "project", "Aria");
-
+  var filteredAria = filterJSON(data, "project", "Aria")
+  
   $('#button_aria').on('click', function () {
+    ariaC = true;
+    console.log(ariaC)
     update(filteredAria)
+    // newArray = filteredAria.map(data => ({ value: data.disposition }));
+    // console.log(newArray)
   })
 
   // Co-inventing Doria
   var filteredDoria = filterJSON(data, "project", "Co-inventing Doria");
 
   $('#button_co-inventing_doria').on('click', function () {
+    doriaC = true;
     update(filteredDoria)
+
   })
   
   // GB Crescenzago
   var filteredCrescenzago = filterJSON(data, "project", "Green Between");
 
   $('#button_green_between').on('click', function () {
+    greenbC = true;
     update(filteredCrescenzago)
   })
   
@@ -190,6 +210,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   var filteredInnesto = filterJSON(data, "project", "L'innesto");
 
   $('#button_l_innesto').on('click', function () {
+    innestoC = true;
     update(filteredInnesto)
   })
 
@@ -197,6 +218,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   var filteredLambrate = filterJSON(data, "project", "Lambrate Streaming");
 
   $('#button_lambrate_streaming').on('click', function () {
+    lambrateC = true;
     update(filteredLambrate)
   })
   
@@ -204,48 +226,55 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   var filteredLoreto = filterJSON(data, "project", "Loreto Open Community");
 
   $('#button_loreto_open_community').on('click', function () {
+    loretoC = true;
     update(filteredLoreto)
   })
- 
+  
   //City Door
   var filteredCityD = filterJSON(data, "project", "Milano City Door");
-
+  
   $('#button_milano_city_door').on('click', function () {
+    citydC = true;
     update(filteredCityD)
   })
   
   //Molecola
   var filteredMolecola = filterJSON(data, "project", "MoLeCoLa");
-
+  
   $('#button_molecola').on('click', function () {
+    molecolaC = true;
     update(filteredMolecola)
   })
   
   // P. Romana
   var filteredPRomana = filterJSON(data, "project", "Scalo di Porta Romana");
-
+  
   $('#button_scalo_di_porta_romana').on('click', function () {
+    romanaC = true;
     update(filteredPRomana)
   })
- 
+  
   // Sei Milano
   var filtered6Milano = filterJSON(data, "project", "Sei Milano");
-
+  
   $('#button_sei_milano').on('click', function () {
+    seimC = true;
     update(filtered6Milano)
   })
   
   // Torre Botanica
   var filteredTorre = filterJSON(data, "project", "Torre Botanica");
-
+  
   $('#button_torre_botanica').on('click', function () {
+    torrebC = true;
     update(filteredTorre)
   })
   
   // Vitae
   var filteredVitae = filterJSON(data, "project", "Vitae");
-
+  
   $('#button_vitae').on('click', function () {
+    vitaeC = true;
     update(filteredVitae)
   })
   
@@ -254,19 +283,171 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   // Background
   var filteredBg = filterJSON(data, "disposition", 3);
   $('#button_background').on('click', function () {
-    update(filteredBg)
+    if(ariaC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Aria')
+      update(mioArray)
+    }
+    else if(doriaC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Co-inventing Doria')
+      update(mioArray)
+    }
+    else if(greenbC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Green Between')
+      update(mioArray)
+    }
+    else if(innestoC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == "L'innesto")
+      update(mioArray)
+    }
+    else if(lambrateC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Lambrate Streaming')
+      update(mioArray)
+    }
+    else if(loretoC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Loreto Open Community')
+      update(mioArray)
+    }
+    else if(citydC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Milano City Door')
+      update(mioArray)
+    }
+    else if(molecolaC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'MoLeCoLa')
+      update(mioArray)
+    }
+    else if(romanaC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Scalo di Porta Romana')
+      update(mioArray)
+    }
+    else if(seimC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Sei Milano')
+      update(mioArray)
+    }
+    else if(torrebC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Torre Botanica')
+      update(mioArray)
+    }
+    else if(vitaeC == true){
+      mioArray = data.filter(d => d.disposition ==3 && d.project == 'Vitae')
+      update(mioArray)
+    }
+
+    else{
+      update(filteredBg)
+      console.log('bene uguale')
+    }
   })
 
   // Middle ground
   var filteredMg = filterJSON(data, "disposition", 2);
   $('#button_middleground').on('click', function () {
-    update(filteredMg)
+    if(ariaC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Aria')
+      update(mioArray)
+    }
+    else if(doriaC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Co-inventing Doria')
+      update(mioArray)
+    }
+    else if(greenbC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Green Between')
+      update(mioArray)
+    }
+    else if(innestoC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == "L'innesto")
+      update(mioArray)
+    }
+    else if(lambrateC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Lambrate Streaming')
+      update(mioArray)
+    }
+    else if(loretoC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Loreto Open Community')
+      update(mioArray)
+    }
+    else if(citydC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Milano City Door')
+      update(mioArray)
+    }
+    else if(molecolaC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'MoLeCoLa')
+      update(mioArray)
+    }
+    else if(romanaC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Scalo di Porta Romana')
+      update(mioArray)
+    }
+    else if(seimC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Sei Milano')
+      update(mioArray)
+    }
+    else if(torrebC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Torre Botanica')
+      update(mioArray)
+    }
+    else if(vitaeC == true){
+      mioArray = data.filter(d => d.disposition ==2 && d.project == 'Vitae')
+      update(mioArray)
+    }
+    else{
+      update(filteredMg)
+    }
   })
   
   // Foreground
   var filteredFg = filterJSON(data, "disposition", 1);
   $('#button_foreground').on('click', function () {
-    update(filteredFg)
+    if(ariaC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Aria')
+      update(mioArray)
+    }
+    else if(doriaC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Co-inventing Doria')
+      update(mioArray)
+    }
+    else if(greenbC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Green Between')
+      update(mioArray)
+    }
+    else if(innestoC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == "L'innesto")
+      update(mioArray)
+    }
+    else if(lambrateC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Lambrate Streaming')
+      update(mioArray)
+    }
+    else if(loretoC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Loreto Open Community')
+      update(mioArray)
+    }
+    else if(citydC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Milano City Door')
+      update(mioArray)
+    }
+    else if(molecolaC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'MoLeCoLa')
+      update(mioArray)
+    }
+    else if(romanaC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Scalo di Porta Romana')
+      update(mioArray)
+    }
+    else if(seimC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Sei Milano')
+      update(mioArray)
+    }
+    else if(torrebC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Torre Botanica')
+      update(mioArray)
+    }
+    else if(vitaeC == true){
+      mioArray = data.filter(d => d.disposition ==1 && d.project == 'Vitae')
+      update(mioArray)
+    }
+    else{
+      update(filteredFg)
+    }
   })
   
 

@@ -174,28 +174,26 @@ $('#reinventing_cities').on('mouseover', function(){
 })
 
 
-
-const repelForce = d3.forceManyBody().strength(-15).distanceMin(100);
-const attractForce = d3.forceManyBody().strength(15).distanceMin(200);
+const repelForce = d3.forceManyBody().strength(-35).distanceMax(800);
+const attractForce = d3.forceManyBody().strength(200).distanceMax(-10);
 
 
 const width = d3.select("#wall").node().offsetWidth
 const height = d3.select("#wall").node().offsetHeight 
 const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${height}`)
 const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`)
-const radius = 20;
+const radius = 80;
 
 const simulation = d3.forceSimulation()
-    // .force("x", d3.forceX())
-    // .force("y", d3.forceY())
-    // .force("collide", d3.forceCollide().radius(d => -10))
-    .force('charge', d3.forceManyBody().strength(-10))
+    .force("x", d3.forceX())
+    .force("y", d3.forceY())
+    .force("collide", d3.forceCollide().radius(d => -22))
+    .force('charge', d3.forceManyBody().strength(2))
     .force("repelForce", repelForce)
-    .force("attractForce", attractForce)
     .on("tick", ticked);
 
 function ticked() {
-    node.attr("transform", d=>`translate(${d.x}, ${d.y})`);
+    node.attr("transform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`);
 }
 
 
@@ -211,12 +209,12 @@ function update(data) {
 
     node = node.data(data, d=>d.id)
     node.exit().remove()
-    node = node.enter().append("g").merge(node).attr('class', 'drag')
+    node = node.enter().append("g").merge(node)
     node.append("image")
         .attr("width","20")
         .attr("height","20")
         .attr("href", d=>"./assets/data/SPRITE/"+d.name+".png")
-        .classed('draggable', true)
+        // .classed('draggable', true)
 
     simulation.nodes(data)
     simulation.alpha(1)
@@ -224,47 +222,45 @@ function update(data) {
     
 }
 
-// function dragsubject(d) {
-//     var subject = simulation.find(event.x, event.y);
-//     // return subject
-//     return simulation.find(event.x, event.y);
-// }
+function dragsubject(d) {
+    var subject = simulation.find(event.x, event.y);
+    // return subject
+    return simulation.find(event.x, event.y);
+}
 
-// function dragstarted(d) {
-//     console.log('start')
-//     if (!event.active) simulation.alphaTarget(0.3).restart();
-//     d.fx = d.x;
-//     d.fy = d.y;
-// }
+function dragstarted(d) {
+    console.log('start')
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+}
 
-// function dragged(d) {
-//     console.log('progress')
-//     // console.log(event.x)
-//     // d3.select(node).attr('class', 'draggg')
-//     .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
-//     d.fx = d.x;
-//     d.fy = d.y;
-// }
+function dragged(d) {
+    console.log('progress')
+    // console.log(event.x)
+    // d3.select(node).attr('class', 'draggg')
+    .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
+    d.fx = d.x;
+    d.fy = d.y;
+}
 
-// function dragended(d) {
-//     console.log('end')
-//     if (!d3.event.active) simulation.alphaTarget(0);
-//     d.fx = null;
-//     d.fy = null;
-// }
+function dragended(d) {
+    console.log('end')
+    if (!d3.event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+}
 
-// svg.call(
-//     d3.drag()
-//         .subject(dragsubject)
-//         .on("start", dragstarted)
-//         .on("drag", dragged)
-//         .on("end", dragended)
-// );
+svg.call(
+    d3.drag()
+        .subject(dragsubject)
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended)
+);
 
 
 d3.json("./assets/data/data-id.json").then(data=>{
-    // const xScaleDomain = data.map(d=>d.stereotype).sort()
-    // xScale.domain(xScaleDomain)
     update(data);   
 })
 
