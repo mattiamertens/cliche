@@ -197,14 +197,7 @@ function ticked() {
 }
 
 
-// positions
-// const xScale = d3.scalePoint().range([0,width])
-
-
-
 let node = g.selectAll(".node")
-
-
 function update(data) {
 
     node = node.data(data, d=>d.id)
@@ -264,3 +257,13 @@ d3.json("./assets/data/data-id.json").then(data=>{
     update(data);   
 })
 
+
+
+
+
+function slide(){
+    let slideValue = document.getElementById("slider").value;
+    document.getElementById("my-img").style.clipPath = "polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)";
+    // console.log("polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)");
+    console.log(slideValue)
+}

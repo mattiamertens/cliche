@@ -28,7 +28,7 @@
     <a href="about.html" class="nav-item3">About the project</a>
   </div>
 
-    <div class="home-title-wrapper drag">
+    <div class="home-title-wrapper">
         <div class="home-title">So Cliché</div>
         <p class="claim">Predicting the future one render at the time</p>
     </div>
@@ -38,7 +38,7 @@
         <div id="wall" class="flex-display-center-center"></div> 
        
         <div class="section-wrapper flex-display-center-center">
-            <a href="cliche.html" class="section flex-display-center-center">Your go-to cliché guide</a>
+            <a href="cliche.html" class="section flex-display-center-center">Your sassy go-to cliché guide</a>
             <a href="compare.html" class="section flex-display-center-center">OCD - Ordered Cliché Disposition</a>
         </div>
     </div>
@@ -63,11 +63,13 @@
             </div>
         </div>
         <div class="home-img-wrapper flex-display-center-center">
-            <div class="hover-me"> Hover to reveal people </div>
             <img src="assets/home/empty.jpg" alt="no people" class="stacked-img no-people">
-            <img src="assets/home/full.jpg" alt="no people" class="stacked-img">
-        </div>
+            <img src="assets/home/full.jpg" alt="no people" class="stacked-img" id="my-img">
 
+            <input type="range" min="0" max="100" value="50" id="slider" oninput="slide()">
+          </div>
+
+        
         <div class="map-container">
 
           <div class="milan-map-txt column">

@@ -692,8 +692,10 @@ data.then(function(data) {
 				img.setAttribute("width", img.getBoundingClientRect().width)
 				img.setAttribute("height", img.getBoundingClientRect().height)
 				// console.log(img, img.getBoundingClientRect())
-
-				magnify("to-magnify", 3);
+				
+				$(img).one('mousemove', function(){
+					magnify("to-magnify", 3);
+				})
 
 			// execute drawImage statements here
 			}, false);
