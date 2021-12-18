@@ -459,7 +459,7 @@ a {
 /* HOMEPAGE */
 
 .splash-wrapper{
-    height: 90vh;
+    height: 83vh;
     width: 100vw;
     padding-top: 15%;
 }
@@ -482,7 +482,12 @@ a {
 .home-title-wrapper{
     position: absolute;
     padding: 2% 0 0 2%;
+    z-index: 100;
 }
+.drag{
+    z-index: 10000;
+}
+
 .home-title{
     font-size: 60px;
     margin-bottom: 6px;

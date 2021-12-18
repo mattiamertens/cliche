@@ -5,7 +5,7 @@ window.addEventListener('scroll',function(){
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   console.log(scrollTop)
   
-  if(scrollTop > 400){ 
+  if(scrollTop > 530){ 
     $('.topnav').removeClass('hidden-nav')
   }
   
@@ -17,6 +17,11 @@ window.addEventListener('scroll',function(){
   lastScrollTop = scrollTop;
 });
 
+// $('.drag').on('click', function(){
+//     alert('m')
+// })
+
+// $( ".drag" ).draggable();
 
 //show names of projects
 $('#sd_vitae').on('mouseover', function(){
@@ -206,11 +211,12 @@ function update(data) {
 
     node = node.data(data, d=>d.id)
     node.exit().remove()
-    node = node.enter().append("g").merge(node)
+    node = node.enter().append("g").merge(node).attr('class', 'drag')
     node.append("image")
         .attr("width","20")
         .attr("height","20")
         .attr("href", d=>"./assets/data/SPRITE/"+d.name+".png")
+        .classed('draggable', true)
 
     simulation.nodes(data)
     simulation.alpha(1)
