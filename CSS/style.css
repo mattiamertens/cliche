@@ -173,6 +173,7 @@ a {
     border-bottom: 1px solid;
     width: 100%;
     font-size: 13px;
+    height: 30px;
 }
 .context-title{
     display: flex;
@@ -200,7 +201,6 @@ a {
 }
 
 .city{
-    font-family: Suisse Intl bold;
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -211,7 +211,7 @@ a {
     font-size: 13px;
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 4px;
 }
 
 .visibility-toggle{
@@ -234,9 +234,9 @@ a {
 .container.column:not(.active) {
     overflow-y: hidden;
 }
-.focus{
+.cat-focus{
     box-shadow: inset 0px 0px 17px #AEFF00;
-    width: 34px;
+    width: 2.6vw;
 }
 .in-focus{
     box-shadow: inset 0px 0px 7px #AEFF00;
@@ -476,7 +476,7 @@ a {
 
 .home-title-wrapper{
     position: absolute;
-    padding: 2% 0 0 4.4%;
+    padding: 2% 0 0 2%;
 }
 .home-title{
     font-size: 60px;

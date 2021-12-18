@@ -150,8 +150,8 @@ $('#reinventing_cities').on('mouseover', function(){
 
 
 
-const repelForce = d3.forceManyBody().strength(-40).distanceMin(1);
-const attractForce = d3.forceManyBody().strength(54).distanceMin(60);
+const repelForce = d3.forceManyBody().strength(-15).distanceMin(100);
+const attractForce = d3.forceManyBody().strength(15).distanceMin(200);
 
 
 const width = d3.select("#wall").node().offsetWidth
@@ -161,12 +161,12 @@ const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`
 const radius = 20;
 
 const simulation = d3.forceSimulation()
-    .force("x", d3.forceX(10))
-    .force("y", d3.forceY())
-    // .force("collide", d3.forceCollide().radius(d => 10))
-    .force('charge', d3.forceManyBody().strength(-16))
+    // .force("x", d3.forceX())
+    // .force("y", d3.forceY())
+    // .force("collide", d3.forceCollide().radius(d => -10))
+    .force('charge', d3.forceManyBody().strength(-10))
     .force("repelForce", repelForce)
-    // .force("attractForce", attractForce)
+    .force("attractForce", attractForce)
     .on("tick", ticked);
 
 function ticked() {

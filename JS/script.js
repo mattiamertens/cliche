@@ -20,11 +20,11 @@ let isMouseHover = false
 let hoverCheck = $('.container');
 hoverCheck.on('mouseenter', function(){
 	if (!$(this).hasClass('active')) {
-		$(this).addClass('focus')
+		$(this).addClass('cat-focus')
 	}
 })
 hoverCheck.on('mouseleave', function(){
-	$(this).removeClass('focus')
+	$(this).removeClass('cat-focus')
 })
 
 // categories card generation
@@ -701,7 +701,7 @@ data.then(function(data) {
 
 			// $('.img-wrapper').prepend('<img id="test" class="modal-img" src="' + imagePath + '" />');
 			
-			$('.city').text(city);
+			$('.city').text(city + ',');
 			$('.project').text(project);
 		}
 

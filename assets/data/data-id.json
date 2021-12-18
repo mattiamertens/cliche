@@ -12,17 +12,6 @@
         "id": "AR01_P01"
     },
     {
-        "name": "label",
-        "project": "label",
-        "render": "AR01",
-        "type": "P",
-        "index": "02",
-        "disposition": 2,
-        "stereotype": "S06",
-        "rectangle": "",
-        "id": ""
-    },
-    {
         "name": "AR01_P02",
         "city": "Milano",
         "project": "Aria",
