@@ -107,9 +107,15 @@ a {
 }
 .button{
     border: 1px solid;
-    padding: 10px 36px;
+    height: 40px;
+    font-family: Suisse Intl bold;
 }
-
+.button a {
+    font-family: Suisse Intl bold;
+}
+.button:hover{
+    box-shadow: inset 0px 0px 17px #AEFF00;
+}
 .img-magnifier-glass {
     position:absolute;
     border: 1px solid #AEFF00;
@@ -117,8 +123,6 @@ a {
     width: 140px;
     height: 200px;
 }
-
-
 .topnav{
     width: 100%;
     height:var(--navbar-height);
@@ -160,6 +164,9 @@ a {
 
 .not-active{
     opacity: 0;
+}
+.highlighted{
+    text-shadow: 0px 0px 13px #AEFF00;
 }
 .underlined{
     text-decoration: underline;
@@ -567,14 +574,10 @@ a {
 .section{
     width: 32%;
     margin: 0 3%;
-    height: 44px;
     background-color: white;
     font-family: Suisse Intl bold;
     border: 1px solid;
     z-index: 100;
-}
-.section:hover{
-    box-shadow: inset 0px 0px 17px #AEFF00;
 }
 .shadow-overlay{
     position: fixed;
@@ -590,6 +593,7 @@ a {
 .main-text{
     font-family: var(--sans-font);
     font-size: 54px;
+    line-height: 60px;
 }
 .question{
     margin-top: 40px;
@@ -622,16 +626,6 @@ a {
     background: transparent;
     margin: 0;
 }
-/* #slider::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 100%;
-    width: 20px;
-    background-color: white;
-    background: url("../assets/slider.png");   
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: grab;
-} */
 #slider::-webkit-slider-thumb{
     -webkit-appearance: none;
     border: none;
@@ -667,16 +661,11 @@ a {
     margin-top: 80px;
 }
 .map_button{
-    outline: 1px solid;
     padding: 12px 18px;
     margin: 15px 0;
     width: fit-content;
-    font-family: Suisse Intl bold;
     font-size: 11px;
     cursor: default;
-}
-.map_button:hover{
-    box-shadow: inset 0px 0px 17px #AEFF00;
 }
 .mapitem_hidden{
     display: none;
@@ -707,10 +696,11 @@ a {
     background-color: #aeff00;
 }
 .learn-more-wrapper{
-    margin-bottom: 2%;
+    margin: 2% 0;
 }
 .learn-more{
     margin-top: 10px;
+    padding: 10px 36px;
 }
 
 

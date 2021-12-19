@@ -9,7 +9,6 @@ window.addEventListener('scroll',function(){
   
   else{
     $('.topnav').addClass('hidden-nav')
-    console.log('no')
   }
   lastScrollTop = scrollTop;
 });
@@ -212,33 +211,30 @@ function update(data) {
     
 }
 
-function dragsubject(d) {
+function dragsubject(event) {
     var subject = simulation.find(event.x, event.y);
     // return subject
     return simulation.find(event.x, event.y);
 }
 
-function dragstarted(d) {
+function dragstarted(event) {
     console.log('start')
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
+    if (!event.active) simulation.alphaTarget(1).restart();
+    event.fx = event.x;
+    event.fy = event.y;
 }
 
-function dragged(d) {
+function dragged(event) {
     console.log('progress')
-    // console.log(event.x)
-    // d3.select(node).attr('class', 'draggg')
-    .attr("cx", d.x = d.x).attr("cy", d.y = d.y);
-    d.fx = d.x;
-    d.fy = d.y;
+    event.fx = event.x;
+    event.fy = event.y;
 }
 
-function dragended(d) {
+function dragended(event) {
     console.log('end')
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
+    if (!event.active) simulation.alphaTarget(0);
+    event.fx = null;
+    event.fy = null;
 }
 
 svg.call(
@@ -254,13 +250,7 @@ d3.json("./assets/data/data-id.json").then(data=>{
     update(data);   
 })
 
-
-
-
-
 function slide(){
     let slideValue = document.getElementById("slider").value;
     document.getElementById("my-img").style.clipPath = "polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)";
-    // console.log("polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)");
-    console.log(slideValue)
 }
