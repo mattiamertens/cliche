@@ -2,7 +2,7 @@
 window.addEventListener('scroll',function(){
   var lastScrollTop;
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
+  console.log(scrollTop)
   if(scrollTop > 530){ 
     $('.topnav').removeClass('hidden-nav')
   }
@@ -12,12 +12,6 @@ window.addEventListener('scroll',function(){
   }
   lastScrollTop = scrollTop;
 });
-
-// $('.drag').on('click', function(){
-//     alert('m')
-// })
-
-// $( ".drag" ).draggable();
 
 //show names of projects
 $('#sd_vitae').on('mouseover', function(){
