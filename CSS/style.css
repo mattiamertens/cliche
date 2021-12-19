@@ -665,8 +665,26 @@ a {
     margin-bottom: 10px;
 }
 .text-paragraph{
-    width: 65%;
+    width: 70%;
     font-family: var(--sans-font);
+}
+.body_title {
+    margin-top: 3%;
+}
+.list_item {
+    margin: 1% 0 0 0%;
+}
+.indented{
+    margin: 2% 0 0 3%;
+}
+.abt-img-wrapper{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
+}
+.flex-start{
+    justify-content: flex-start
 }
 
 

@@ -469,5 +469,18 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     $('.project_filters').addClass('closed')
     $('.html-change-project').text('Project')
     $('.html-change-position').text('Position')
+
+   ariaC = false;  
+   doriaC = false;
+   greenbC = false;
+   innestoC = false;
+   lambrateC = false;
+   loretoC = false;
+   citydC = false;
+   molecolaC = false;
+   romanaC = false;
+   seimC = false;
+   torrebC = false;
+   vitaeC = false;
   })
 });
