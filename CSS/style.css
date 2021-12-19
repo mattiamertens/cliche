@@ -51,6 +51,7 @@
     --sans-font: Neurial Grotesk regular;
     --mono-font: Suisse Intl regular;
     --navbar-height: 46px;
+    --inset-shadow: inset 0px 0px 17px #AEFF00;
 }
 
 *, body{
@@ -155,6 +156,9 @@ a {
 
 .not-active{
     opacity: 0;
+}
+.underlined{
+    text-decoration: underline;
 }
 
 .wrapper{
@@ -379,8 +383,6 @@ a {
     left: 10%;
     background-color: red;
 }
-
-
 .filter_buttons_space {
     display: flex;
     align-items: center;
@@ -397,52 +399,58 @@ a {
     font-size: 11px;  
 }
 
-.cathegory_button{
+.category_button{
     margin-left: 30px;
     font-size: 11px;
     outline: 1px solid #000;
     width: 180px;
-    padding: 4px 5px;
-    bottom: 0px;
     background-color: white;
     z-index: 1;
+    cursor: pointer;
+}
+.arrow {
+    transform: rotate(180deg);
+    transition: all 0.2s ease;
+}
+.rotate{
+    transform: rotate(0deg);
+}
+.category_button span {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 5px
 }
 
-#project_label{
-    left: 50px;
-}
-
-#position_label{
-    left: 250px;
-}
-
-#position_filters{
+.position_filters{
     position: absolute;   
-    left: 290px;
-    bottom: 24px;  
+    transform: translateY(-111px);
     cursor: pointer;
 }
-#project_filters{
+.project_filters{
     position: absolute;
-    left: 100px;
-    bottom: 40px;
+    transform: translateY(-300px);
     cursor: pointer;
 }
-
+.filter_button:hover{
+    box-shadow: inset 0px 0px 10px #AEFF00;
+}
 .closed{
-    /* visibility: hidden; */
-    /* display: none; */
+    display: none;
+}
+.on-focus{
+    box-shadow: var(--inset-shadow);
 }
 
 .filter_button{
+    display: flex;
+    flex-direction: column;
     font-size: 11px;
     outline: 1px solid #000;
     height: 20px;
     width: 180px;
-    position: relative;
-    padding-top: 1px;
-    padding-bottom: 2px;
-    padding-left: 5px;
+    padding: 3px 0 0 5px;
+    margin-top: 1px;
     background-color: white; 
 }
 
@@ -513,6 +521,9 @@ a {
     font-family: Suisse Intl bold;
     border: 1px solid;
     z-index: 100;
+}
+.section:hover{
+    box-shadow: inset 0px 0px 17px #AEFF00;
 }
 .shadow-overlay{
     position: fixed;
@@ -613,6 +624,9 @@ a {
     font-family: Suisse Intl bold;
     font-size: 11px;
     cursor: default;
+}
+.map_button:hover{
+    box-shadow: inset 0px 0px 17px #AEFF00;
 }
 .mapitem_hidden{
     display: none;

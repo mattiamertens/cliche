@@ -1,22 +1,20 @@
 // File for comparing
 
 $('#project_label').on('click', function () {
-  $('#project_filters').toggleClass('closed')
+  $(this).toggleClass('on-focus')
+  $('.project_filters').toggleClass('closed')
+  $('.arrow1').toggleClass('rotate')
 });
 
 $('#position_label').on('click', function () {
-  $('#position_filters').toggleClass('closed')
+  $(this).toggleClass('on-focus')
+  $('.position_filters').toggleClass('closed')
+  $('.arrow2').toggleClass('rotate')
 });
-
-$('.filter_button').on('click', function(){
-  $(this).addClass('in-focus');
-  $(this).siblings().removeClass('in-focus');
-})
 
 // Multi choice filtering
 const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
 const plane = [1, 2, 3]
-
 
 const width = d3.select("#force-layout").node().offsetWidth;
 const height = d3.select("#force-layout").node().offsetHeight;
@@ -30,8 +28,6 @@ const simulation_t = d3
   .force("y", d3.forceY())
   .force("collide", d3.forceCollide().radius(d => 10))
   .force("charge", d3.forceManyBody().strength(-25))
-  // .force("repelForce", repelForce)
-  // .force("attractForce", attractForce)
   .on("tick", ticked);
 
 //.stop()
@@ -164,6 +160,8 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     return result;
   }
 
+
+
   var ariaC = false;
   var doriaC = false;
   var greenbC = false;
@@ -177,14 +175,14 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   var torrebC = false;
   var vitaeC = false;
 
-
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria")
   
   $('#button_aria').on('click', function () {
     ariaC = true;
-    console.log(ariaC)
+    // console.log(ariaC)
     update(filteredAria)
+    $('.html-change-project').text($(this).text())
     // newArray = filteredAria.map(data => ({ value: data.disposition }));
     // console.log(newArray)
   })
@@ -195,7 +193,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_co-inventing_doria').on('click', function () {
     doriaC = true;
     update(filteredDoria)
-
+    $('.html-change-project').text($(this).text())
   })
   
   // GB Crescenzago
@@ -204,6 +202,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_green_between').on('click', function () {
     greenbC = true;
     update(filteredCrescenzago)
+    $('.html-change-project').text($(this).text())
   })
   
   // Innesto
@@ -212,6 +211,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_l_innesto').on('click', function () {
     innestoC = true;
     update(filteredInnesto)
+    $('.html-change-project').text($(this).text())
   })
 
   //Lambrate
@@ -220,6 +220,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_lambrate_streaming').on('click', function () {
     lambrateC = true;
     update(filteredLambrate)
+    $('.html-change-project').text($(this).text())
   })
   
   //Loreto
@@ -228,6 +229,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_loreto_open_community').on('click', function () {
     loretoC = true;
     update(filteredLoreto)
+    $('.html-change-project').text($(this).text())
   })
   
   //City Door
@@ -236,6 +238,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_milano_city_door').on('click', function () {
     citydC = true;
     update(filteredCityD)
+    $('.html-change-project').text($(this).text())
   })
   
   //Molecola
@@ -244,6 +247,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_molecola').on('click', function () {
     molecolaC = true;
     update(filteredMolecola)
+    $('.html-change-project').text($(this).text())
   })
   
   // P. Romana
@@ -252,6 +256,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_scalo_di_porta_romana').on('click', function () {
     romanaC = true;
     update(filteredPRomana)
+    $('.html-change-project').text($(this).text())
   })
   
   // Sei Milano
@@ -260,6 +265,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_sei_milano').on('click', function () {
     seimC = true;
     update(filtered6Milano)
+    $('.html-change-project').text($(this).text())
   })
   
   // Torre Botanica
@@ -268,6 +274,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_torre_botanica').on('click', function () {
     torrebC = true;
     update(filteredTorre)
+    $('.html-change-project').text($(this).text())
   })
   
   // Vitae
@@ -276,6 +283,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_vitae').on('click', function () {
     vitaeC = true;
     update(filteredVitae)
+    $('.html-change-project').text($(this).text())
   })
   
 
@@ -334,7 +342,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
 
     else{
       update(filteredBg)
-      console.log('bene uguale')
+      $('.html-change-position').text($(this).text())
     }
   })
 
@@ -391,6 +399,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     else{
       update(filteredMg)
+      $('.html-change-position').text($(this).text())
     }
   })
   
@@ -447,6 +456,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     else{
       update(filteredFg)
+      $('.html-change-position').text($(this).text())
     }
   })
   

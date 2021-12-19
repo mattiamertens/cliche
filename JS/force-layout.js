@@ -1,9 +1,7 @@
 // Show navbar
 window.addEventListener('scroll',function(){
   var lastScrollTop;
-  
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollTop)
   
   if(scrollTop > 530){ 
     $('.topnav').removeClass('hidden-nav')
@@ -13,7 +11,6 @@ window.addEventListener('scroll',function(){
     $('.topnav').addClass('hidden-nav')
     console.log('no')
   }
-  
   lastScrollTop = scrollTop;
 });
 
