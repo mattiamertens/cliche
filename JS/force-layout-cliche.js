@@ -11,6 +11,9 @@ $('#position_label').on('click', function () {
   $('.position_filters').toggleClass('closed')
   $('.arrow2').toggleClass('rotate')
 });
+$('.tut-button, .close-info').on('click', function(){
+  $('.tutorial').toggleClass('closed')
+})
 
 // Multi choice filtering
 const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
@@ -44,7 +47,7 @@ const _positions = function (c, xORy) {
     S00: { x: -2*width, y: -2*height },
     S01: { x: 0.40*width, y: 0.65*height },
     S02: { x: 0.15*width, y: 0.67*height },
-    S03: { x: 0.15*width, y: 0.25*height },
+    S03: { x: 0.15*width, y: 0.35*height },
     S04: { x: 0.18*width, y: 0.50*height },
     S05: { x: 0.79*width, y: 0.65*height },
     S06: { x: 0.38*width, y: 0.47*height },
@@ -114,16 +117,71 @@ function update(data) {
 	$('g').on('mouseover', function(){
     // alert('adcd')
     var project = $(this).children().attr('data-project')
-    var name = $(this).children().attr('data-name')
     var stereotype = $(this).children().attr('data-stereotype')
 
-    $('.prova').removeClass('visibility-toggle')
-    .append("text") 
-    .text(project + name + stereotype)
+    $('.info-display').removeClass('visibility-toggle')
+    if(stereotype == 'S01'){
+      $('.info-stereotype').text('Shopaholic')
+    }
+    if(stereotype == 'S02'){
+      $('.info-stereotype').text('Fridays for future')
+    }
+    if(stereotype == 'S03'){
+      $('.info-stereotype').text('5g enthusiast')
+    }
+    if(stereotype == 'S04'){
+      $('.info-stereotype').text('Bookworm cutie')
+    }
+    if(stereotype == 'S05'){
+      $('.info-stereotype').text('Wolf of Wall Street')
+    }
+    if(stereotype == 'S06'){
+      $('.info-stereotype').text('Lovey Dovey')
+    }
+    if(stereotype == 'S07'){
+      $('.info-stereotype').text('Fashion diva')
+    }
+    if(stereotype == 'S08'){
+      $('.info-stereotype').text('F is for family')
+    }
+    if(stereotype == 'S09'){
+      $('.info-stereotype').text('#Squad')
+    }
+    if(stereotype == 'S10'){
+      $('.info-stereotype').text('Socks and sandals')
+    }
+    if(stereotype == 'S11'){
+      $('.info-stereotype').text('Place-older')
+    }
+    if(stereotype == 'S12'){
+      $('.info-stereotype').text('Find me on Soundcloud')
+    }
+    if(stereotype == 'S13'){
+      $('.info-stereotype').text('Tree-hugger')
+    }
+    if(stereotype == 'S15'){
+      $('.info-stereotype').text('A child')
+    }
+    if(stereotype == 'S16'){
+      $('.info-stereotype').text('Freshmen')
+    }
+    if(stereotype == 'S17'){
+      $('.info-stereotype').text('Something futuristic')
+    }
+    if(stereotype == 'S19'){
+      $('.info-stereotype').text('PETA')
+    }
+    if(stereotype == 'S20'){
+      $('.info-stereotype').text('Hustler')
+    }
+    if(stereotype == 'S21'){
+      $('.info-stereotype').text('No pain, no gain')
+    }
+    $('.info-project').text(project)
 
   });
   $('g').on('mouseleave', function(){
-    $('.prova').addClass('visibility-toggle')
+    $('.info-display').addClass('visibility-toggle')
   })
 
 

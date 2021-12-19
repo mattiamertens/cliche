@@ -158,7 +158,7 @@ a {
     opacity: 0;
 }
 .underlined{
-    text-decoration: underline;
+    font-family: Suisse Intl bold;
 }
 
 .wrapper{
@@ -370,12 +370,44 @@ a {
 }
 
 /* COMPARE */
+.tut-button{
+    position: absolute;
+    top: 8%;
+    left: 96%;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+}
+.tutorial{
+    background-color: #fff;
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+}
+.tut-header{
+    border-bottom: 1px solid;
+    padding: 2px 14px 0 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.close-info{
+    cursor: pointer;
+}
+.tut-text{
+    padding: 14px 18px;
+}
 
 #force-layout{
     width: 100vw;
     height: calc(100vh - var(--navbar-height));
 }
-.cluster-label{
+/* .cluster-label{
     position: absolute;
     line-height: 20px;
     padding: 0 5px;
@@ -383,19 +415,19 @@ a {
     font-size: 11px;
     height: 20px;
     border: 1px solid;
-    /* width: fit-content; */
 }
 .business{
     top: 79%;
     left: 83%;
-}
-.prova{
-    width: 100px;
+} */
+.info-display{
     height: 100px;
     position: absolute;
-    top: 10%;
-    left: 10%;
-    background-color: red;
+    top: 8%;
+    margin-left: 20px;
+}
+.info-stereotype{
+    font-size: 20px;
 }
 .filter_buttons_space {
     display: flex;
@@ -563,13 +595,12 @@ a {
     width: 100%;
     position: relative;
     overflow: hidden;
-
     margin: 40px 0;
-    height: 80vh;
+    height: 87vh;
+    align-items: flex-end;
 }
 .stacked-img{
-    /* max-height: 660px; */
-    max-width: 100%;
+    width: 100%;
     position: absolute;
 }
 #my-img{
