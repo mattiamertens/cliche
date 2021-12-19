@@ -105,6 +105,10 @@ a {
 .column{
     flex-direction: column;
 }
+.button{
+    border: 1px solid;
+    padding: 10px 36px;
+}
 
 .img-magnifier-glass {
     position:absolute;
@@ -158,6 +162,9 @@ a {
     opacity: 0;
 }
 .underlined{
+    text-decoration: underline;
+}
+.bold{
     font-family: Suisse Intl bold;
 }
 
@@ -699,6 +706,12 @@ a {
     width: 30px;
     background-color: #aeff00;
 }
+.learn-more-wrapper{
+    margin-bottom: 2%;
+}
+.learn-more{
+    margin-top: 10px;
+}
 
 
 /* ABOUT */
@@ -754,17 +767,23 @@ a {
 
 /* FOOTER */
 footer {
-    margin: 2rem 0;
-    padding: 0 1rem; 
+    margin: 2rem 0 0 0;
+    padding: 1.4rem; 
     grid-column: 1 / span 4;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 1rem;
     font-size: 1rem;
+    width: 100vw;
+    box-shadow: 0px 0px 15px lightgrey;
 }
 
 footer * {
     grid-column: span 1;
+}
+footer p{
+    margin: 16px 0;
+    font-size: 12px;
 }
 
 .logo {
