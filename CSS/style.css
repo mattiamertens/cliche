@@ -355,8 +355,8 @@ a {
     }
 }
 .box{
-    width: 158px;
-    height: 158px;
+    width: 10.9vw;
+    height: 10.9vw;
 }
 .box:hover{
     border: 1px solid;
