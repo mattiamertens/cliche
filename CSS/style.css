@@ -189,9 +189,9 @@ a {
     border: 1px solid;
     top:50%;
     left: 50%;
-    transform: translate(-50%, -48%);
+    transform: translate(-50%, -50%);
     background-color: white;
-    z-index: 10;
+    z-index: 100000000000;
 }
 .context-header{
     display: flex;
