@@ -1,4 +1,22 @@
 // File for comparing
+// $(document).ready(function () {
+//   if (localStorage.getItem('wasVisited') == null) {
+//       alert('non vis')
+//   } else {
+//       localStorage.setItem('wasVisited', 1);
+//       alert('ah sì sì')
+//   }
+// });
+
+if (!localStorage.getItem('previouslyVisited')) {
+  function runTour(){
+  alert('sss')
+  }
+  localStorage.setItem('previouslyVisited', 'true');
+}
+
+
+
 
 $('#project_label').on('click', function () {
   $(this).toggleClass('on-focus')
@@ -24,7 +42,7 @@ const height = d3.select("#force-layout").node().offsetHeight;
 const svg = d3.select("#force-layout")
   .append("svg")
   .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
-  .attr("viewBox", `0 0 ${width} ${height}`);
+  .attr("viewBox", `0 0 ${width} ${height}`)
 
 const simulation_t = d3
   .forceSimulation()
@@ -87,36 +105,8 @@ function update(data) {
     .attr('data-stereotype', d => d.stereotype)
     
 
-
-    // Label
-    // var filteredLabel = filterJSONLab(data, 'project', 'label')
-    // console.log(filteredLabel)
-
-    // label = label.data(filteredLabel, (d) => d.id);
-    // label.exit().remove();
-    // label = label.enter().append("g").merge(label);
-    // label
-    //   .append("image")
-    //   .attr("width", "100")
-    //   .attr("height", "50")
-    //   .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png")
-    //   .attr("data-project", d => d.project)
-    //   .attr('data-name', d => d.name)
-    //   .attr('data-stereotype', d => d.stereotype)
-
-
-
-  // node
-  //   .append("text")
-  //   .text((d) => d.id)
-  //   .classed("label", true)
-  //   .style("font-size", "10px")
-  //   .style("text-anchor", "middle")
-
-
   // OPEN MODAL WINDOW
 	$('g').on('mouseover', function(){
-    // alert('adcd')
     var project = $(this).children().attr('data-project')
     var stereotype = $(this).children().attr('data-stereotype')
 

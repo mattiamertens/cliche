@@ -173,8 +173,8 @@ const width = d3.select("#wall").node().offsetWidth
 const height = d3.select("#wall").node().offsetHeight 
 const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${height}`)
 const g = svg.append("g")
-    .attr("transform", `translate(${width/2}, ${height/2})`)
-    .attr("webkitTransform", `translate(${width/2}, ${height/2})`)
+    .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
+    .attr("transform", `translate(${width/2}, ${height/2})`);
 const radius = 80;
 
 const simulation = d3.forceSimulation()
@@ -187,8 +187,7 @@ const simulation = d3.forceSimulation()
 
 function ticked() {
     node
-        .attr("transform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`)
-        .attr("webkitTransform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`);
+        .attr("transform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`);
 }
 
 
