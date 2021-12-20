@@ -23,6 +23,7 @@ const width = d3.select("#force-layout").node().offsetWidth;
 const height = d3.select("#force-layout").node().offsetHeight;
 const svg = d3.select("#force-layout")
   .append("svg")
+  .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
   .attr("viewBox", `0 0 ${width} ${height}`);
 
 const simulation_t = d3

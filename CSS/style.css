@@ -355,7 +355,8 @@ a {
     }
 }
 .box{
-    width: 10.9vw;
+    /* nel caso cancellare */
+    width: 10.9vw; 
     height: 10.9vw;
 }
 .box:hover{
@@ -589,13 +590,6 @@ a {
     z-index: 100;
     font-size: 20px;
     height: 46px !important;
-}
-.shadow-overlay{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 34px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 87.74%);
 }
 .main-wrapper{
     width: 100vw;
