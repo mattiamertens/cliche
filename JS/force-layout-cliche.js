@@ -349,6 +349,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   // Background
   var filteredBg = filterJSON(data, "disposition", 3);
   $('#button_background').on('click', function () {
+    $('.html-change-position').text($(this).text())
     if(ariaC == true){
       mioArray = data.filter(d => d.disposition ==3 && d.project == 'Aria')
       update(mioArray)
@@ -407,6 +408,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   // Middle ground
   var filteredMg = filterJSON(data, "disposition", 2);
   $('#button_middleground').on('click', function () {
+    $('.html-change-position').text($(this).text())
     if(ariaC == true){
       mioArray = data.filter(d => d.disposition ==2 && d.project == 'Aria')
       update(mioArray)
@@ -457,13 +459,13 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     else{
       update(filteredMg)
-      $('.html-change-position').text($(this).text())
     }
   })
   
   // Foreground
   var filteredFg = filterJSON(data, "disposition", 1);
   $('#button_foreground').on('click', function () {
+    $('.html-change-position').text($(this).text())
     if(ariaC == true){
       mioArray = data.filter(d => d.disposition ==1 && d.project == 'Aria')
       update(mioArray)
@@ -514,7 +516,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     else{
       update(filteredFg)
-      $('.html-change-position').text($(this).text())
     }
   })
   
