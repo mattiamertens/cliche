@@ -1,19 +1,18 @@
 // File for comparing
-// $(document).ready(function () {
-//   if (localStorage.getItem('wasVisited') == null) {
-//       alert('non vis')
-//   } else {
-//       localStorage.setItem('wasVisited', 1);
-//       alert('ah sì sì')
-//   }
-// });
-
-if (!localStorage.getItem('previouslyVisited')) {
-  function runTour(){
-  alert('sss')
+$(document).ready(function () {
+  if (localStorage.getItem('wasVisited') == null) {
+      localStorage.setItem('wasVisited', 1);
+  } else {
+      $('.tutorial').addClass('closed')
   }
-  localStorage.setItem('previouslyVisited', 'true');
-}
+});
+
+// if (!localStorage.getItem('previouslyVisited')) {
+//   function runTour(){
+//   alert('sss')
+//   }
+//   localStorage.setItem('previouslyVisited', 'true');
+// }
 
 
 
@@ -34,8 +33,8 @@ $('.tut-button, .close-info').on('click', function(){
 })
 
 // Multi choice filtering
-const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
-const plane = [1, 2, 3]
+// const project = ['Aria', 'Co-Inventing Doria', 'Green Between', "L'innesto", 'Lambrate Streaming', 'Loreto Open Community', 'Milano City Door', 'MoLeCoLa', 'Scalo di Porta Romana', 'Sei Milano', 'Torre Botanica', 'Vitae']
+// const plane = [1, 2, 3]
 
 const width = d3.select("#force-layout").node().offsetWidth;
 const height = d3.select("#force-layout").node().offsetHeight;
@@ -44,8 +43,7 @@ const svg = d3.select("#force-layout")
   .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
   .attr("viewBox", `0 0 ${width} ${height}`)
 
-const simulation_t = d3
-  .forceSimulation()
+const simulation_t = d3.forceSimulation()
   .force("x", d3.forceX())
   .force("y", d3.forceY())
   .force("collide", d3.forceCollide().radius(d => 10))
