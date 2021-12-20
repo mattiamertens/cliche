@@ -247,7 +247,11 @@ d3.json("./assets/data/data-id.json").then(data=>{
     update(data);   
 })
 
+$(document).ready(function slide(){
+    let slideValue = document.getElementById("slider").value; 
+    document.getElementById("my-img").style.clipPath = "polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)";
+})
 function slide(){
-    let slideValue = document.getElementById("slider").value;
+    let slideValue = document.getElementById("slider").value; 
     document.getElementById("my-img").style.clipPath = "polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)";
 }

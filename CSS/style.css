@@ -744,6 +744,9 @@ a {
 .list_item {
     margin: 1% 0 0 0%;
 }
+.flex{
+    display: flex;
+}
 .indented{
     margin: 2% 0 0 3%;
 }
