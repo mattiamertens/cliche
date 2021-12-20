@@ -581,12 +581,14 @@ a {
     width: 90%;
 }
 .section{
-    width: 32%;
-    margin: 0 3%;
+    width: 36%;
+    margin: 0 2%;
     background-color: white;
-    font-family: Suisse Intl bold;
+    font-family: Suisse Intl regular;
     border: 1px solid;
     z-index: 100;
+    font-size: 20px;
+    height: 46px !important;
 }
 .shadow-overlay{
     position: fixed;
@@ -771,11 +773,10 @@ a {
     font-family: Suisse Intl bold;
 }
 table{
-    margin: 0;
-    border-spacing: 0.5px;
+    border-collapse: collapse;
 }
 table td, table th{
-    border: 0.5px solid;
+    border: 1px solid;
     padding: 8px;
 }
 .table{

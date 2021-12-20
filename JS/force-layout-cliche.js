@@ -237,111 +237,133 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   var filteredAria = filterJSON(data, "project", "Aria")
   
   $('#button_aria').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     ariaC = true;
-    // console.log(ariaC)
+    console.log(ariaC)
     update(filteredAria)
     $('.html-change-project').text($(this).text())
-    // newArray = filteredAria.map(data => ({ value: data.disposition }));
-    // console.log(newArray)
+    $('.html-change-position').text('Position')
   })
 
   // Co-inventing Doria
   var filteredDoria = filterJSON(data, "project", "Co-inventing Doria");
 
   $('#button_co-inventing_doria').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     doriaC = true;
     update(filteredDoria)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // GB Crescenzago
   var filteredCrescenzago = filterJSON(data, "project", "Green Between");
 
   $('#button_green_between').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     greenbC = true;
     update(filteredCrescenzago)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // Innesto
   var filteredInnesto = filterJSON(data, "project", "L'innesto");
 
   $('#button_l_innesto').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     innestoC = true;
     update(filteredInnesto)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
 
   //Lambrate
   var filteredLambrate = filterJSON(data, "project", "Lambrate Streaming");
 
   $('#button_lambrate_streaming').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     lambrateC = true;
     update(filteredLambrate)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   //Loreto
   var filteredLoreto = filterJSON(data, "project", "Loreto Open Community");
 
   $('#button_loreto_open_community').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     loretoC = true;
     update(filteredLoreto)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   //City Door
   var filteredCityD = filterJSON(data, "project", "Milano City Door");
   
   $('#button_milano_city_door').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     citydC = true;
     update(filteredCityD)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   //Molecola
   var filteredMolecola = filterJSON(data, "project", "MoLeCoLa");
   
   $('#button_molecola').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     molecolaC = true;
     update(filteredMolecola)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // P. Romana
   var filteredPRomana = filterJSON(data, "project", "Scalo di Porta Romana");
   
   $('#button_scalo_di_porta_romana').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     romanaC = true;
     update(filteredPRomana)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // Sei Milano
   var filtered6Milano = filterJSON(data, "project", "Sei Milano");
   
   $('#button_sei_milano').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     seimC = true;
     update(filtered6Milano)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // Torre Botanica
   var filteredTorre = filterJSON(data, "project", "Torre Botanica");
   
   $('#button_torre_botanica').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     torrebC = true;
     update(filteredTorre)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
   // Vitae
   var filteredVitae = filterJSON(data, "project", "Vitae");
   
   $('#button_vitae').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     vitaeC = true;
     update(filteredVitae)
     $('.html-change-project').text($(this).text())
+    $('.html-change-position').text('Position')
   })
   
 
@@ -529,17 +551,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     $('.html-change-project').text('Project')
     $('.html-change-position').text('Position')
 
-   ariaC = false;  
-   doriaC = false;
-   greenbC = false;
-   innestoC = false;
-   lambrateC = false;
-   loretoC = false;
-   citydC = false;
-   molecolaC = false;
-   romanaC = false;
-   seimC = false;
-   torrebC = false;
-   vitaeC = false;
+   ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
   })
 });

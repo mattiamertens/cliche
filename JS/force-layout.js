@@ -172,7 +172,9 @@ const attractForce = d3.forceManyBody().strength(200).distanceMax(-10);
 const width = d3.select("#wall").node().offsetWidth
 const height = d3.select("#wall").node().offsetHeight 
 const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${height}`)
-const g = svg.append("g").attr("transform", `translate(${width/2}, ${height/2})`)
+const g = svg.append("g")
+    .attr("transform", `translate(${width/2}, ${height/2})`)
+    // .attr("-webkit-transform:", `translate(${width/2}, ${height/2})`)
 const radius = 80;
 
 const simulation = d3.forceSimulation()
@@ -184,7 +186,9 @@ const simulation = d3.forceSimulation()
     .on("tick", ticked);
 
 function ticked() {
-    node.attr("transform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`);
+    node
+        .attr("transform", d=>`translate(${d.x*1.5}, ${d.y/1.2})`)
+        // .attr("-webkit-transform:", d=>`translate(${d.x*1.5}, ${d.y/1.2})`);
 }
 
 
@@ -198,7 +202,6 @@ function update(data) {
         .attr("width","20")
         .attr("height","20")
         .attr("href", d=>"./assets/data/SPRITE/"+d.name+".png")
-        // .classed('draggable', true)
 
     simulation.nodes(data)
     simulation.alpha(1)
