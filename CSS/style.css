@@ -541,7 +541,7 @@ a {
     top: 0%;
     justify-content: space-evenly;
     width: 100vw;
-    height: calc(100vh - 46px);
+    height: calc(100vh - 90px);
 }
 
 .label{
@@ -606,7 +606,7 @@ a {
 }
 .parallax-over{
     position: absolute;
-    top: 95%;
+    top: 90%;
 }
 .main-text{
     font-family: var(--sans-font);
