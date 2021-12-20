@@ -1,16 +1,17 @@
 // Show navbar
 window.addEventListener('scroll',function(){
   var lastScrollTop;
+  var offset = document.querySelector('.main-wrapper').getBoundingClientRect().top;
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollTop)
-  if(scrollTop > 530){ 
+//   console.log(offset)
+  if(offset < 0){ 
     $('.topnav').removeClass('hidden-nav')
   }
   
   else{
     $('.topnav').addClass('hidden-nav')
   }
-  lastScrollTop = scrollTop;
+//   lastScrollTop = scrollTop;
 });
 
 //show names of projects
