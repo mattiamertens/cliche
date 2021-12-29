@@ -41,9 +41,10 @@ const svg = d3.select("#force-layout")
   .attr("viewBox", `0 0 ${width} ${height}`)
   .call(d3.zoom()
     .scaleExtent([1, 6])
+    .translateExtent([[0, 0], [width, height]])
     .on('zoom', (event) => {
       svg.attr('transform', event.transform);
-      console.log(event.transform)
+      console.log(width)
       // console.log('AAA')
     })
   )
