@@ -14,9 +14,6 @@ $(document).ready(function () {
 //   localStorage.setItem('previouslyVisited', 'true');
 // }
 
-
-
-
 $('#project_label').on('click', function () {
   $(this).toggleClass('on-focus')
   $('.project_filters').toggleClass('closed')
@@ -42,15 +39,26 @@ const svg = d3.select("#force-layout")
   .append("svg")
   .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
   .attr("viewBox", `0 0 ${width} ${height}`)
+  .call(d3.zoom()
+    .scaleExtent([1, 6])
+    .on('zoom', (event) => {
+      svg.attr('transform', event.transform);
+      console.log(event.transform)
+      // console.log('AAA')
+    })
+  )
+  .append('g')
+
+  
+
 
 const simulation_t = d3.forceSimulation()
   .force("x", d3.forceX())
   .force("y", d3.forceY())
   .force("collide", d3.forceCollide().radius(d => 10))
   .force("charge", d3.forceManyBody().strength(-25))
-  .on("tick", ticked);
-
-//.stop()
+  .on("tick", ticked)
+  .stop();
 
 function ticked() {
   // console.log(simulation.alpha())
@@ -97,6 +105,8 @@ function update(data) {
     .append("image")
     .attr("width", "25")
     .attr("height", "25")
+    // .attr("r", 10)
+    // .attr('fill', 'red')
     .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png")
     .attr("data-project", d => d.project)
     .attr('data-name', d => d.name)
@@ -177,20 +187,9 @@ function update(data) {
   simulation_t.nodes(data);
   simulation_t.force("x").x((d) => _positions(d.stereotype,"x"));
   simulation_t.force("y").y((d) => _positions(d.stereotype,"y"));
-  // simulation_t.force("x").x(d=>d._x)
-  // simulation_t.force("y").y(d => cluster(d.stereotype))
   simulation_t.alpha(1);
   simulation_t.restart();
 }
-
-// var zoom = d3.zoom()
-//       .scaleExtent([1, 4])
-//       .on('zoom', function(event) {
-//           svg.attr('transform', event.transform);
-//       console.log('AAA')
-// });
-// svg.call(zoom);
-
 
 data = d3.json("./assets/data/data-id.json").then((data) => {
   

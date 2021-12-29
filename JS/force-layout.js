@@ -242,6 +242,15 @@ svg.call(
         .on("end", dragended)
 );
 
+// var zoom = d3.zoom()
+//   .scaleExtent([1, 2])
+//   .on('zoom', (event) => {
+//     svg.attr('transform', event.transform);
+//     console.log('AAA')
+// });
+// svg.call(zoom);
+
+
 
 d3.json("./assets/data/data-id.json").then(data=>{
     update(data);   
