@@ -175,7 +175,6 @@ const svg = d3.select("#wall").append("svg").attr("viewBox", `0 0 ${width} ${hei
 const g = svg.append("g")
     .attr("preserveAspectRatio", "xMinYMin meet") // nel caso cancellare
     .attr("transform", `translate(${width/2}, ${height/2})`);
-const radius = 80;
 
 const simulation = d3.forceSimulation()
     .force("x", d3.forceX())
@@ -208,47 +207,70 @@ function update(data) {
     
 }
 
-function dragsubject(event) {
-    var subject = simulation.find(event.x, event.y);
-    // return subject
-    return simulation.find(event.x, event.y);
-}
+// function dragstarted(event) {
+//     console.log('start')
+//     if (!event.active) simulation.alphaTarget(1).restart();
+//     event.fx = event.x;
+//     event.fy = event.y;
+// }
 
-function dragstarted(event) {
-    console.log('start')
-    if (!event.active) simulation.alphaTarget(1).restart();
-    event.fx = event.x;
-    event.fy = event.y;
-}
+// function dragged(event) {
+//     console.log('progress')
+//     event.fx = event.x;
+//     event.fy = event.y;
+// }
 
-function dragged(event) {
-    console.log('progress')
-    event.fx = event.x;
-    event.fy = event.y;
-}
+// function dragended(event) {
+//     console.log('end')
+//     if (!event.active) simulation.alphaTarget(0);
+//     event.fx = null;
+//     event.fy = null;
+// }
 
-function dragended(event) {
-    console.log('end')
-    if (!event.active) simulation.alphaTarget(0);
-    event.fx = null;
-    event.fy = null;
-}
+// d3.selectAll('g').call(
+//     d3.drag()
+//     // .subject(dragsubject)
+//     .on("start", dragstarted)
+//     .on("drag", dragged)
+//     .on("end", dragended)
+// );
 
-svg.call(
-    d3.drag()
-        .subject(dragsubject)
-        .on("start", dragstarted)
-        .on("drag", dragged)
-        .on("end", dragended)
-);
+d3.selectAll('g').call(drag(simulation))
+function drag(simulation) {    
+    function dragstarted(event) {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      event.subject.fx = event.subject.x;
+      event.subject.fy = event.subject.y;
+    }
+    
+    function dragged(event) {
+      event.subject.fx = event.x;
+      event.subject.fy = event.y;
+    }
+    
+    function dragended(event) {
+      if (!event.active) simulation.alphaTarget(0);
+      event.subject.fx = null;
+      event.subject.fy = null;
+    }
+    
+    return d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+  }
 
-// var zoom = d3.zoom()
-//   .scaleExtent([1, 2])
-//   .on('zoom', (event) => {
-//     svg.attr('transform', event.transform);
-//     console.log('AAA')
-// });
-// svg.call(zoom);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

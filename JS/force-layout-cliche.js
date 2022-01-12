@@ -7,19 +7,11 @@ $(document).ready(function () {
   }
 });
 
-// if (!localStorage.getItem('previouslyVisited')) {
-//   function runTour(){
-//   alert('sss')
-//   }
-//   localStorage.setItem('previouslyVisited', 'true');
-// }
-
 $('#project_label').on('click', function () {
   $(this).toggleClass('on-focus')
   $('.project_filters').toggleClass('closed')
   $('.arrow1').toggleClass('rotate')
 });
-
 $('#position_label').on('click', function () {
   $(this).toggleClass('on-focus')
   $('.position_filters').toggleClass('closed')
@@ -44,14 +36,10 @@ const svg = d3.select("#force-layout")
     .translateExtent([[0, 0], [width, height]])
     .on('zoom', (event) => {
       svg.attr('transform', event.transform);
-      console.log(width)
-      // console.log('AAA')
     })
   )
   .append('g')
-
-  
-
+;
 
 const simulation_t = d3.forceSimulation()
   .force("x", d3.forceX())
@@ -106,13 +94,21 @@ function update(data) {
     .append("image")
     .attr("width", "25")
     .attr("height", "25")
-    // .attr("r", 10)
-    // .attr('fill', 'red')
     .attr("href", (d) => "./assets/data/SPRITE/" + d.name + ".png")
     .attr("data-project", d => d.project)
     .attr('data-name', d => d.name)
     .attr('data-stereotype', d => d.stereotype)
-    
+  ;
+
+  const zoom = d3.zoom()
+      .scaleExtent([1, 8])
+      .on("zoom", zoomed);
+
+  function zoomed(event) {
+    const {transform} = event;
+    node.attr("transform", transform);
+  }
+
 
   // OPEN MODAL WINDOW
 	$('g').on('mouseover', function(){
@@ -183,6 +179,7 @@ function update(data) {
   $('g').on('mouseleave', function(){
     $('.info-display').addClass('visibility-toggle')
   })
+
 
 
   simulation_t.nodes(data);
@@ -542,4 +539,141 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
 
    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
   })
+
+
+
+   // OPEN MODAL WINDOW
+	$('g').on('click', function(){
+    setTimeout(function() {
+			$('.modal-wrapper').removeClass('visibility-toggle');
+		}, 100)
+
+		var project = $(this).children().attr('data-project');
+
+		$(this).children().each(function(index){
+			var src = $(this).attr("href");
+			var srcR = src.replace('.png', 'R.jpeg');
+			ShowLargeImage(srcR);
+      console.log(this)
+		});
+		
+		function ShowLargeImage(imagePath) {
+			var img = new Image();   // Create new img element
+			img.addEventListener('load', function() {
+				
+				document.querySelector(".img-wrapper").appendChild(img)
+				img.classList.add("modal-img");
+				img.setAttribute("id", "to-magnify");
+				img.setAttribute("width", img.getBoundingClientRect().width)
+				img.setAttribute("height", img.getBoundingClientRect().height)
+				// console.log(img, img.getBoundingClientRect())
+				
+				$(img).one('mousemove', function(){
+					magnify("to-magnify", 3);
+				})
+			// execute drawImage statements here
+			}, false);
+			img.src = imagePath; // Set source path
+			
+			$('.project').text(project);
+		}	
+	});
+
+	//CLOSE MODAL WINDOW	
+	window.addEventListener("click", function(event) {
+		var removeZoom = document.getElementsByClassName('img-magnifier-glass');
+		var removed = document.getElementsByClassName('modal-img');
+
+		$('.close-context').on('click', function () {
+			$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+			$('.box').removeClass('in-focus')
+			
+			$(removed[0]).remove();				
+			$(removeZoom[0]).remove();
+		});
+
+		var alessio = event.target
+		
+		if($('div#luca').has(alessio).length==false){
+			$('.box').removeClass('in-focus')
+	
+			if($(".modal-wrapper").hasClass('visibility-toggle')==false){
+				if ($(alessio).hasClass('.modal-wrapper')==false){
+					
+					$('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+					var removed = document.getElementsByClassName('modal-img');
+					
+					$(removed[0]).remove();				
+					$(removeZoom[0]).remove();
+				}
+				
+			}
+		}
+		$(document).on('keyup',function(evt) {
+			if (evt.keyCode == 27) {
+			   $('.modal-wrapper').addClass('visibility-toggle'); // close modal-wrapper
+				$('.box').removeClass('in-focus')
+				var removed = document.getElementsByClassName('modal-img');
+				$(removed[0]).remove();
+				$(removeZoom[0]).remove();
+			}
+		});
+	});
+
+  // MAGNIFIER GLASS
+  function magnify(carlo, zoom) {
+	var img, glass, w, h, bw;
+	img = document.getElementById(carlo);
+
+	/*create magnifier glass:*/
+	glass = document.createElement("DIV");
+	glass.setAttribute("class", "img-magnifier-glass");
+	/*insert magnifier glass:*/
+	img.parentElement.insertBefore(glass, img);
+	/*set background properties for the magnifier glass:*/
+	glass.style.backgroundImage = "url('" + img.src + "')";
+	glass.style.backgroundRepeat = "no-repeat";
+	glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+	bw = 3;
+	w = glass.offsetWidth / 2;
+	h = glass.offsetHeight / 2;
+	/*execute a function when someone moves the magnifier glass over the image:*/
+	glass.addEventListener("mousemove", moveMagnifier);
+	img.addEventListener("mousemove", moveMagnifier);
+	/*and also for touch screens:*/
+	glass.addEventListener("touchmove", moveMagnifier);
+	img.addEventListener("touchmove", moveMagnifier);
+	function moveMagnifier(e) {
+	  var pos, x, y;
+	  /*prevent any other actions that may occur when moving over the image*/
+	  e.preventDefault();
+	  /*get the cursor's x and y positions:*/
+	  pos = getCursorPos(e);
+	  x = pos.x;
+	  y = pos.y;
+	  /*prevent the magnifier glass from being positioned outside the image:*/
+	  if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+	  if (x < w / zoom) {x = w / zoom;}
+	  if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+	  if (y < h / zoom) {y = h / zoom;}
+	  /*set the position of the magnifier glass:*/
+	  glass.style.left = (x - w) + "px";
+	  glass.style.top = (y - h) + "px";
+	  /*display what the magnifier glass "sees":*/
+	  glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+	}
+	function getCursorPos(e) {
+	  var a, x = 0, y = 0;
+	  e = e || window.event;
+	  /*get the x and y positions of the image:*/
+	  a = img.getBoundingClientRect();
+	  /*calculate the cursor's x and y coordinates, relative to the image:*/
+	  x = e.pageX - a.left;
+	  y = e.pageY - a.top;
+	  /*consider any page scrolling:*/
+	  x = x - window.pageXOffset;
+	  y = y - window.pageYOffset;
+	  return {x : x, y : y};
+	}
+}
 });

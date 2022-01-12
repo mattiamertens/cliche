@@ -398,6 +398,9 @@ a {
     cursor: pointer;
     z-index: 1;
 }
+.tut-button:hover{
+    box-shadow:  inset 0px 0px 8px #AEFF00;
+}
 .tutorial{
     background-color: #fff;
     position: absolute;
@@ -606,6 +609,7 @@ a {
     font-family: var(--sans-font);
     font-size: 54px;
     line-height: 60px;
+    margin-top: 14px;
 }
 .question{
     margin-top: 40px;
@@ -782,6 +786,7 @@ a {
 }
 .team-txt a{
     font-family: Suisse Intl bold;
+    text-decoration: underline;
 }
 table{
     border-collapse: collapse;

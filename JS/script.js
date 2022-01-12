@@ -669,7 +669,7 @@ data.then(function(data) {
 		$(this).addClass('in-focus');
 		setTimeout(function() {
 			$('.modal-wrapper').removeClass('visibility-toggle');
-		}, 100)
+		}, 100) 
 
 		var city = $(this).children().attr('data-city');
 		var project = $(this).children().attr('data-project');
