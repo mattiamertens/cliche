@@ -554,7 +554,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
 			var src = $(this).attr("href");
 			var srcR = src.replace('.png', 'R.jpeg');
 			ShowLargeImage(srcR);
-      console.log(this)
 		});
 		
 		function ShowLargeImage(imagePath) {
