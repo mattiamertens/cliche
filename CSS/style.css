@@ -443,10 +443,14 @@ a {
     left: 83%;
 } */
 .info-display{
-    height: 100px;
     position: absolute;
-    top: 8%;
-    margin-left: 20px;
+    background-color: white;
+    z-index: 100;
+    padding: 6px 12px;
+    border: 1px solid;
+    pointer-events: none;
+    transition: all 0.1s;
+    width: fit-content;
 }
 .info-stereotype{
     font-size: 20px;

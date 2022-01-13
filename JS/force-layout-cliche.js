@@ -84,8 +84,6 @@ const _positions = function (c, xORy) {
 
 let node = svg.selectAll(".sprite");
 
-
-
 function update(data) {
   node = node.data(data, (d) => d.id);
   node.exit().remove();
@@ -115,7 +113,38 @@ function update(data) {
     var project = $(this).children().attr('data-project')
     var stereotype = $(this).children().attr('data-stereotype')
 
+
+    document.addEventListener('mousemove', (event) => {
+      // TOP-LEFT
+      if(event.clientX < window.innerWidth / 2){
+        // $('.info-display').css({'left': event.clientX, 'top': event.clientY})
+        $('.info-display').css('left', event.clientX + 8)
+        $('.info-display').css('top', event.clientY)
+      }
+
+    
+      // TOP-RIGHT
+      else if (event.clientX > window.innerWidth / 2){
+        $('.info-display').css({'right': window.innerWidth - event.clientX, 'top': event.clientY, 'left': 'auto'})
+        // $('.info-display').css('top', event.clientY)
+      }
+
+      // // BOTTOM-LEFT
+      // else if (event.clientX < window.innerWidth / 2 && event.clientY > window.innerHeight / 2){
+      //   $('.info-display').css('left', event.clientX + 8)
+      //   $('.info-display').css('top', event.clientY - 80)
+      //   console.log('bottom-left')
+      // }
+
+      // // BOTTOM-RIGHT
+      // else if (event.clientX > window.innerWidth / 2 && event.clientY > window.innerHeight / 2){
+      //   $('.info-display').css('left', event.clientX)
+      //   $('.info-display').css('top', event.clientY - 80)
+      //   console.log('bottom-right')
+      // }
+    });
     $('.info-display').removeClass('visibility-toggle')
+
     if(stereotype == 'S01'){
       $('.info-stereotype').text('Shopaholic')
     }
@@ -179,7 +208,6 @@ function update(data) {
   $('g').on('mouseleave', function(){
     $('.info-display').addClass('visibility-toggle')
   })
-
 
 
   simulation_t.nodes(data);
