@@ -1,11 +1,14 @@
 // File for comparing
 $(document).ready(function () {
-  if (localStorage.getItem('wasVisited') == null) {
-      localStorage.setItem('wasVisited', 1);
-  } else {
-      $('.tutorial').addClass('closed')
+  if (!window.sessionStorage.getItem("isExecuted")) {
+    window.sessionStorage.setItem("isExecuted", true);
+  }
+   else {
+    $('.tutorial').addClass('closed')
   }
 });
+
+
 
 $('#project_label').on('click', function () {
   $(this).toggleClass('on-focus')
@@ -117,31 +120,12 @@ function update(data) {
     document.addEventListener('mousemove', (event) => {
       // TOP-LEFT
       if(event.clientX < window.innerWidth / 2){
-        // $('.info-display').css({'left': event.clientX, 'top': event.clientY})
-        $('.info-display').css('left', event.clientX + 8)
-        $('.info-display').css('top', event.clientY)
+        $('.info-display').css({'left': event.clientX, 'top': event.clientY})
       }
-
-    
       // TOP-RIGHT
       else if (event.clientX > window.innerWidth / 2){
         $('.info-display').css({'right': window.innerWidth - event.clientX, 'top': event.clientY, 'left': 'auto'})
-        // $('.info-display').css('top', event.clientY)
       }
-
-      // // BOTTOM-LEFT
-      // else if (event.clientX < window.innerWidth / 2 && event.clientY > window.innerHeight / 2){
-      //   $('.info-display').css('left', event.clientX + 8)
-      //   $('.info-display').css('top', event.clientY - 80)
-      //   console.log('bottom-left')
-      // }
-
-      // // BOTTOM-RIGHT
-      // else if (event.clientX > window.innerWidth / 2 && event.clientY > window.innerHeight / 2){
-      //   $('.info-display').css('left', event.clientX)
-      //   $('.info-display').css('top', event.clientY - 80)
-      //   console.log('bottom-right')
-      // }
     });
     $('.info-display').removeClass('visibility-toggle')
 
@@ -209,7 +193,6 @@ function update(data) {
     $('.info-display').addClass('visibility-toggle')
   })
 
-
   simulation_t.nodes(data);
   simulation_t.force("x").x((d) => _positions(d.stereotype,"x"));
   simulation_t.force("y").y((d) => _positions(d.stereotype,"y"));
@@ -220,7 +203,6 @@ function update(data) {
 data = d3.json("./assets/data/data-id.json").then((data) => {
   
   update(data)
-
   function filterJSON(data, key, value) {
     var result = [];
 
@@ -231,8 +213,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     }
     return result;
   }
-
-
 
   var ariaC = false;
   var doriaC = false;
