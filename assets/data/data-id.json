@@ -1,16 +1,5 @@
 [
     {
-        "name": "targhett",
-        "city": "Milano",
-        "project": "Aria",
-        "render": "AR01",
-        "type": "P",
-        "index": "01",
-        "disposition": 1,
-        "stereotype": "S01",
-        "rectangle": "AR01_P01R"
-    },
-    {
         "name": "AR01_P01",
         "city": "Milano",
         "project": "Aria",
@@ -249,6 +238,12 @@
         "stereotype": "S08",
         "rectangle": "AR02_P04R",
         "id": "AR02_P04"
+    },
+    {
+        "name": "targhettS17",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S17"
     },
     {
         "name": "AR03_M02",
@@ -1101,6 +1096,12 @@
         "stereotype": "S01",
         "rectangle": "IN02_P05R",
         "id": "IN02_P05"
+    },
+    {
+        "name": "targhettS01",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S01"
     },
     {
         "name": "IN02_P06",
@@ -2914,6 +2915,7 @@
         "rectangle": "LS02_P06R",
         "id": "LS02_P06"
     },
+    
     {
         "name": "LS03_P01",
         "city": "Milano",
@@ -3093,6 +3095,12 @@
         "stereotype": "S02",
         "rectangle": "MC01_P02R",
         "id": "MC01_P02"
+    },
+    {
+        "name": "targhettS02",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S02"
     },
     {
         "name": "MC01_P03",
@@ -7377,5 +7385,107 @@
         "stereotype": "S00",
         "rectangle": "VT06_P27R",
         "id": "VT06_P27"
+    },
+
+
+    
+    
+    {
+        "name": "targhettS03",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S03"
+    },
+    {
+        "name": "targhettS04",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S04"
+    },
+    {
+        "name": "targhettS05",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S05"
+    },
+    {
+        "name": "targhettS06",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S06"
+    },
+    {
+        "name": "targhettS07",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S07"
+    },
+    {
+        "name": "targhettS08",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S08"
+    },
+    {
+        "name": "targhettS09",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S09"
+    },
+    {
+        "name": "targhettS10",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S10"
+    },
+    {
+        "name": "targhettS11",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S11"
+    },
+    {
+        "name": "targhettS12",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S12"
+    },
+    {
+        "name": "targhettS13",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S13"
+    },
+    {
+        "name": "targhettS15",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S15"
+    },
+    {
+        "name": "targhettS16",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S16"
+    },
+    
+    
+    {
+        "name": "targhettS19",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S19"
+    },
+    {
+        "name": "targhettS20",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S20"
+    },
+    {
+        "name": "targhettS21",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S21"
     }
 ]

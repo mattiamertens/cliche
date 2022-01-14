@@ -92,7 +92,7 @@ function update(data) {
   node.exit().remove();
   node = node.enter().append("g").merge(node);
 
-  node
+  var sprite = node
     .append("image")
     .attr("width", "25")
     .attr("height", "25")
@@ -101,9 +101,17 @@ function update(data) {
     .attr('data-name', d => d.name)
     .attr('data-stereotype', d => d.stereotype)
   ;
-  // var targhett = node._groups[0][0].attr('width', "50");
-  // console.log(targhett);
-  
+
+  d3.select(sprite.filter(function(d){
+      if (d.purpose === 'targhett'){
+        console.log(this)
+        return this
+      }
+    })
+    // .attr('height', 80)
+    // .attr('width', '140')
+    .attr('class', 'targhett')
+  )
 
   const zoom = d3.zoom()
       .scaleExtent([1, 8])
@@ -205,7 +213,6 @@ function update(data) {
 }
 
 data = d3.json("./assets/data/data-id.json").then((data) => {
-  
 
   update(data)
   function filterJSON(data, key, value) {

@@ -545,9 +545,10 @@ a {
     text-decoration: underline;
     cursor: pointer;
 }
-
-
-
+.targhett{
+    height: 35px;
+    width: auto;
+}
 
 
 /* HOMEPAGE */
@@ -822,9 +823,6 @@ table td, table th{
 #definitions-table{
     width: 85%;
 }
-
-
-
 
 
 /* FOOTER */
