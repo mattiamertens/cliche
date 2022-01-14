@@ -104,14 +104,20 @@ function update(data) {
 
   d3.select(sprite.filter(function(d){
       if (d.purpose === 'targhett'){
-        console.log(this)
         return this
       }
     })
-    // .attr('height', 80)
-    // .attr('width', '140')
     .attr('class', 'targhett')
   )
+
+  
+  node.filter(function(d){
+    if (d.purpose === 'targhett'){
+      // console.log(this)
+      return this
+    }
+  })
+  .raise();
 
   const zoom = d3.zoom()
       .scaleExtent([1, 8])
@@ -128,6 +134,14 @@ function update(data) {
     var project = $(this).children().attr('data-project')
     var stereotype = $(this).children().attr('data-stereotype')
 
+    d3.select(sprite.filter(function(d){
+        if (d.purpose === 'targhett'){
+          // console.log(this)
+          return this
+        }
+      })
+      .attr('display', 'none')
+    )
 
     document.addEventListener('mousemove', (event) => {
       // TOP-LEFT
@@ -203,6 +217,15 @@ function update(data) {
   });
   $('g').on('mouseleave', function(){
     $('.info-display').addClass('visibility-toggle')
+
+    d3.select(sprite.filter(function(d){
+      if (d.purpose === 'targhett'){
+        // console.log(this)
+        return this
+      }
+    })
+    .attr('display', 'block')
+  )
   })
 
   simulation_t.nodes(data);

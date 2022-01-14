@@ -549,7 +549,9 @@ a {
     height: 35px;
     width: auto;
 }
-
+.hide{
+    visibility: hidden;
+}
 
 /* HOMEPAGE */
 

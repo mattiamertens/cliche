@@ -1097,12 +1097,7 @@
         "rectangle": "IN02_P05R",
         "id": "IN02_P05"
     },
-    {
-        "name": "targhettS01",
-        "purpose": "targhett",
-        "city": "Milano",
-        "stereotype": "S01"
-    },
+    
     {
         "name": "IN02_P06",
         "city": "Milano",
@@ -4327,6 +4322,12 @@
         "id": "ML05_P02"
     },
     {
+        "name": "targhettS01",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S01"
+    },
+    {
         "name": "ML05_P03",
         "city": "Milano",
         "project": "MoLeCoLa",
@@ -6162,6 +6163,7 @@
         "rectangle": "SM07_P05R",
         "id": "SM07_P05"
     },
+    
     {
         "name": "SM07_P06",
         "city": "Milano",
