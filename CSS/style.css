@@ -437,11 +437,25 @@ a {
     font-size: 11px;
     height: 20px;
     border: 1px solid;
-}
-.business{
-    top: 79%;
-    left: 83%;
 } */
+/* .cat-name{
+    position: absolute;
+    border: 1px solid;
+    border-radius: 50%;
+}
+.shopaholic{
+    top: 82%;
+    left: 33%;
+    width: 100px;
+    height: 100px;
+}
+.friday{
+    left: -5%;
+    top:62%;
+    width: 250px;
+    height: 250px;
+} */
+
 .info-display{
     position: absolute;
     background-color: white;

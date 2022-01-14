@@ -91,6 +91,7 @@ function update(data) {
   node = node.data(data, (d) => d.id);
   node.exit().remove();
   node = node.enter().append("g").merge(node);
+
   node
     .append("image")
     .attr("width", "25")
@@ -100,6 +101,9 @@ function update(data) {
     .attr('data-name', d => d.name)
     .attr('data-stereotype', d => d.stereotype)
   ;
+  // var targhett = node._groups[0][0].attr('width', "50");
+  // console.log(targhett);
+  
 
   const zoom = d3.zoom()
       .scaleExtent([1, 8])
@@ -202,6 +206,7 @@ function update(data) {
 
 data = d3.json("./assets/data/data-id.json").then((data) => {
   
+
   update(data)
   function filterJSON(data, key, value) {
     var result = [];
@@ -684,3 +689,4 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
 	}
 }
 });
+

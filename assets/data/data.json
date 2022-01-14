@@ -1,5 +1,16 @@
 [
     {
+        "name": "targhett",
+        "city": "Milano",
+        "project": "Aria",
+        "render": "AR01",
+        "type": "P",
+        "index": "01",
+        "disposition": 1,
+        "stereotype": "S01",
+        "rectangle": "AR01_P01R"
+    },
+    {
         "name": "AR01_P01",
         "city": "Milano",
         "project": "Aria",
