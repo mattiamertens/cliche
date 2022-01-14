@@ -83,7 +83,7 @@ const _positions = function (c, xORy) {
     S21: { x: 0.65*width, y: 0.65*height },
   };
   return positions[c][xORy]
-};
+}
 
 let node = svg.selectAll(".sprite");
 
@@ -107,9 +107,8 @@ function update(data) {
         return this
       }
     })
-    .attr('class', 'targhett')
+    .attr('class', 'targhett')  
   )
-
   
   node.filter(function(d){
     if (d.purpose === 'targhett'){
@@ -136,11 +135,11 @@ function update(data) {
 
     d3.select(sprite.filter(function(d){
         if (d.purpose === 'targhett'){
-          // console.log(this)
           return this
         }
       })
       .attr('display', 'none')
+      .attr('pointer-events', 'none')
     )
 
     document.addEventListener('mousemove', (event) => {

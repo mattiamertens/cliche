@@ -12,6 +12,12 @@
         "id": "AR01_P01"
     },
     {
+        "name": "targhettS06",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S06"
+    },
+    {
         "name": "AR01_P02",
         "city": "Milano",
         "project": "Aria",
@@ -4424,6 +4430,12 @@
         "id": "ML05_P10"
     },
     {
+        "name": "targhettS09",
+        "purpose": "targhett",
+        "city": "Milano",
+        "stereotype": "S09"
+    },
+    {
         "name": "ML05_P11",
         "city": "Milano",
         "project": "MoLeCoLa",
@@ -7410,12 +7422,7 @@
         "city": "Milano",
         "stereotype": "S05"
     },
-    {
-        "name": "targhettS06",
-        "purpose": "targhett",
-        "city": "Milano",
-        "stereotype": "S06"
-    },
+    
     {
         "name": "targhettS07",
         "purpose": "targhett",
@@ -7427,12 +7434,6 @@
         "purpose": "targhett",
         "city": "Milano",
         "stereotype": "S08"
-    },
-    {
-        "name": "targhettS09",
-        "purpose": "targhett",
-        "city": "Milano",
-        "stereotype": "S09"
     },
     {
         "name": "targhettS10",
