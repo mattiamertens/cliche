@@ -108,6 +108,7 @@ function update(data) {
       }
     })
     .attr('class', 'targhett')  
+    .attr('pointer-events', 'none')
   )
   
   node.filter(function(d){
@@ -216,15 +217,6 @@ function update(data) {
   });
   $('g').on('mouseleave', function(){
     $('.info-display').addClass('visibility-toggle')
-
-    d3.select(sprite.filter(function(d){
-      if (d.purpose === 'targhett'){
-        // console.log(this)
-        return this
-      }
-    })
-    .attr('display', 'block')
-  )
   })
 
   simulation_t.nodes(data);

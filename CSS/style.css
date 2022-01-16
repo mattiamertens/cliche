@@ -477,6 +477,7 @@ a {
     bottom: 20px;
     width: 60%;
     height: 50px;
+    background-color: white;
 }
 #filter_by{
     font-family: var(--sans-font);
@@ -546,7 +547,7 @@ a {
     cursor: pointer;
 }
 .targhett{
-    height: 35px;
+    height: 20px;
     width: auto;
 }
 .hide{
