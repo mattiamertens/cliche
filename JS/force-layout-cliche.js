@@ -142,6 +142,8 @@ function update(data) {
       .attr('display', 'none')
       .attr('pointer-events', 'none')
     )
+    controller = false;
+    $('.tut-label').text('Show labels')
 
     document.addEventListener('mousemove', (event) => {
       // TOP-LEFT
@@ -218,6 +220,31 @@ function update(data) {
   $('g').on('mouseleave', function(){
     $('.info-display').addClass('visibility-toggle')
   })
+
+  let controller = false;
+  $('.tut-label').on('click', function(){
+    if (controller === false) {
+      d3.select(sprite.filter(function(d){
+        if (d.purpose === 'targhett'){
+          return this
+        }
+      }).attr('display', 'block'))
+
+      controller = true;
+      $(this).text('Hide labels')
+    } 
+    else {
+      d3.select(sprite.filter(function(d){
+        if (d.purpose === 'targhett'){
+          return this
+        }
+      }).attr('display', 'none'))
+
+      controller = false;
+      $(this).text('Show labels')
+    }
+  })
+  
 
   simulation_t.nodes(data);
   simulation_t.force("x").x((d) => _positions(d.stereotype,"x"));

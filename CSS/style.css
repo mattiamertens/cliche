@@ -386,20 +386,31 @@ a {
 }
 
 /* COMPARE */
-.tut-button{
+.legend{
     position: absolute;
     top: 8%;
-    left: 96%;
+    right: 1%;
+    z-index: 1;
+}
+.legend div:hover{
+    box-shadow:  inset 0px 0px 8px #AEFF00;
+    cursor: pointer;
+}
+.tut-label{
+    border-radius: 50px;
+    border: 1px solid;
+    height: 34px;
+    padding: 0 8px;
+    margin: 0 16px 0 0;
+    background-color: #fff;
+}
+
+.tut-button{
     background-color: white;
     border-radius: 50%;
     border: 1px solid;
     width: 34px;
     height: 34px;
-    cursor: pointer;
-    z-index: 1;
-}
-.tut-button:hover{
-    box-shadow:  inset 0px 0px 8px #AEFF00;
 }
 .tutorial{
     background-color: #fff;
@@ -429,32 +440,6 @@ a {
     height: calc(100vh - var(--navbar-height));
     transform: translateY(var(--navbar-height));
 }
-/* .cluster-label{
-    position: absolute;
-    line-height: 20px;
-    padding: 0 5px;
-    background-color: white;
-    font-size: 11px;
-    height: 20px;
-    border: 1px solid;
-} */
-/* .cat-name{
-    position: absolute;
-    border: 1px solid;
-    border-radius: 50%;
-}
-.shopaholic{
-    top: 82%;
-    left: 33%;
-    width: 100px;
-    height: 100px;
-}
-.friday{
-    left: -5%;
-    top:62%;
-    width: 250px;
-    height: 250px;
-} */
 
 .info-display{
     position: absolute;
@@ -472,12 +457,13 @@ a {
 .filter_buttons_space {
     display: flex;
     align-items: center;
-    left: 20px;
     position: fixed;
+    left: 20px;
     bottom: 20px;
-    width: 60%;
     height: 50px;
+    padding: 0 16px;
     background-color: white;
+    box-shadow: 0px 0px 16px -2px #d3d3d3;
 }
 #filter_by{
     font-family: var(--sans-font);
