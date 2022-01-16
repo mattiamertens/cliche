@@ -203,37 +203,9 @@ function update(data) {
 
     simulation.nodes(data)
     simulation.alpha(1)
-    simulation.restart()
-    
+    simulation.restart()    
 }
 
-// function dragstarted(event) {
-//     console.log('start')
-//     if (!event.active) simulation.alphaTarget(1).restart();
-//     event.fx = event.x;
-//     event.fy = event.y;
-// }
-
-// function dragged(event) {
-//     console.log('progress')
-//     event.fx = event.x;
-//     event.fy = event.y;
-// }
-
-// function dragended(event) {
-//     console.log('end')
-//     if (!event.active) simulation.alphaTarget(0);
-//     event.fx = null;
-//     event.fy = null;
-// }
-
-// d3.selectAll('g').call(
-//     d3.drag()
-//     // .subject(dragsubject)
-//     .on("start", dragstarted)
-//     .on("drag", dragged)
-//     .on("end", dragended)
-// );
 
 d3.selectAll('g').call(drag(simulation))
 function drag(simulation) {    
@@ -258,7 +230,7 @@ function drag(simulation) {
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended);
-  }
+}
 
 
 
@@ -271,6 +243,11 @@ function drag(simulation) {
 
 
 
+$('.learn-more').on('mouseover', function(){
+    $(this).children('div').addClass('slided')
+}).on('mouseleave', function(){
+    $(this).children('div').removeClass('slided')
+})
 
 
 
