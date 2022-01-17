@@ -121,7 +121,6 @@ $('#private_projects').on('mouseover', function(){
     $('#n_milano_city_door').addClass('mapitem_hidden');
 })
 
-
 //show c40 projects
 $('#reinventing_cities').on('mouseover', function(){
     $('#sd_molecola').addClass('focus');
@@ -196,7 +195,7 @@ function update(data) {
     node = node.data(data, d=>d.id)
     node.exit().remove()
     node = node.enter().append("g").merge(node)
-    node.append("image")
+    var sprite = node.append("image")
         .attr("width","20")
         .attr("height","20")
         .attr("href", d=>"./assets/data/SPRITE/"+d.name+".png")
@@ -204,33 +203,42 @@ function update(data) {
     simulation.nodes(data)
     simulation.alpha(1)
     simulation.restart()    
+    
+    d3.select(sprite.filter(function(d){
+        if (d.purpose === 'targhett'){
+          return this
+        }
+      })
+      .attr('class', 'slide-down')  
+      .attr('pointer-events', 'none')
+    )
 }
 
 
-d3.selectAll('g').call(drag(simulation))
-function drag(simulation) {    
-    function dragstarted(event) {
-      if (!event.active) simulation.alphaTarget(0.3).restart();
-      event.subject.fx = event.subject.x;
-      event.subject.fy = event.subject.y;
-    }
+// d3.selectAll('g').call(drag(simulation))
+// function drag(simulation) {    
+//     function dragstarted(event) {
+//       if (!event.active) simulation.alphaTarget(0.3).restart();
+//       event.subject.fx = event.subject.x;
+//       event.subject.fy = event.subject.y;
+//     }
     
-    function dragged(event) {
-      event.subject.fx = event.x;
-      event.subject.fy = event.y;
-    }
+//     function dragged(event) {
+//       event.subject.fx = event.x;
+//       event.subject.fy = event.y;
+//     }
     
-    function dragended(event) {
-      if (!event.active) simulation.alphaTarget(0);
-      event.subject.fx = null;
-      event.subject.fy = null;
-    }
+//     function dragended(event) {
+//       if (!event.active) simulation.alphaTarget(0);
+//       event.subject.fx = null;
+//       event.subject.fy = null;
+//     }
     
-    return d3.drag()
-      .on("start", dragstarted)
-      .on("drag", dragged)
-      .on("end", dragended);
-}
+//     return d3.drag()
+//       .on("start", dragstarted)
+//       .on("drag", dragged)
+//       .on("end", dragended);
+// }
 
 
 

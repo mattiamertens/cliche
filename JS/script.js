@@ -677,6 +677,7 @@ data.then(function(data) {
 		$(this).children().each(function (index) {
 			// $(this).attr('onclick');
 			var src = $(this).attr("src");
+			console.log(src)
 			var srcR = src.replace('.png', 'R.jpeg');
 			ShowLargeImage(srcR);
 		});
