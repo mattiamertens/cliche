@@ -16,7 +16,7 @@
         "purpose": "targhett",
         "city": "Milano",
         "project": "Aria",
-        "disposition": [1,2,3],
+        "disposition": 3,
         "stereotype": "S06"
     },
     {
