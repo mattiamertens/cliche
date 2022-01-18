@@ -126,7 +126,7 @@ function update(data) {
     node.attr("transform", transform);
   }
 
-  let controller = false;
+  let controller = true;
   $('.tut-label').on('click', function(){
     if (controller === false) {
       d3.select(sprite.filter(function(d){
