@@ -739,7 +739,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     $('.filter_button').removeClass('in-focus')
     $('.project_filters').addClass('closed')
     $('.html-change-project').text('Project')
-    $('.html-change-position').text('Position')
+    $('.html-change-position').text('Position inside render')
 
    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
   })
