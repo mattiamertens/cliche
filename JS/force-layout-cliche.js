@@ -253,17 +253,20 @@ function update(data) {
     // console.log('primo')
 
     var project = $(this).children().attr('data-project');
-    $(this).children().each(function(){
-      var src = $(this).attr("href");
-      var srcR = src.replace('.png', 'R.jpeg');
-      ShowLargeImage(srcR);
-      console.log('secondo')
-    });
-    
+
+      $(this).children().each(function(){
+        var src = $(this).attr("href");
+        var srcR = src.replace('.png', 'R.jpeg');
+        
+        ShowLargeImage(srcR);
+        // console.log('secondo')
+      });
+
+        
     function ShowLargeImage(imagePath) {
       var img = new Image();   // Create new img element
       img.addEventListener('load', function() {
-        console.log('terzo')
+        // console.log('terzo')
         document.querySelector(".img-wrapper").appendChild(img)
         img.classList.add("modal-img");
         img.setAttribute("id", "to-magnify");
@@ -406,33 +409,43 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
         result.push(data[i]);
       }
     }
-    // console.log(result)
     return result;
   }
 
-  var ariaC = false;
-  var doriaC = false;
-  var greenbC = false;
-  var innestoC = false;
-  var lambrateC = false;
-  var loretoC = false;
-  var citydC = false;
-  var molecolaC = false;
-  var romanaC = false;
-  var seimC = false;
-  var torrebC = false;
-  var vitaeC = false;
+  var projects = {
+    ariaC: false,
+    doriaC: false,
+    greenbC: false,
+    innestoC: false,
+    lambrateC: false,
+    loretoC: false,
+    citydC: false,
+    molecolaC: false,
+    romanaC: false,
+    seimC: false,
+    torrebC: false,
+    vitaeC: false
+  }
+
+
+  $('.filter_button').on('click', function(){
+    $('.html-change-project').text($(this).attr('data-filter'))
+  })
+  $('.project_filters').on('click', $('.filter_button'), function(){
+    $('.html-change-position').text('Position inside render')
+  })
+
+  console.log(projects)
 
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria")
   
   $('#button_aria').on('click', function () {
-    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     ariaC = true;
     console.log(ariaC)
+    var filteTry = node.filter(function(d) { return d.project === 'Aria' })
+    console.log(filteTry)
     update(filteredAria)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
 
   // Co-inventing Doria
@@ -442,8 +455,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     doriaC = true;
     update(filteredDoria)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // GB Crescenzago
@@ -453,8 +464,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     greenbC = true;
     update(filteredCrescenzago)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // Innesto
@@ -464,8 +473,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     innestoC = true;
     update(filteredInnesto)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
 
   //Lambrate
@@ -475,8 +482,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     lambrateC = true;
     update(filteredLambrate)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   //Loreto
@@ -486,8 +491,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     loretoC = true;
     update(filteredLoreto)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   //City Door
@@ -497,8 +500,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     citydC = true;
     update(filteredCityD)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   //Molecola
@@ -508,8 +509,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     molecolaC = true;
     update(filteredMolecola)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // P. Romana
@@ -519,8 +518,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     romanaC = true;
     update(filteredPRomana)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // Sei Milano
@@ -530,8 +527,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     seimC = true;
     update(filtered6Milano)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // Torre Botanica
@@ -541,8 +536,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     torrebC = true;
     update(filteredTorre)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
   // Vitae
@@ -552,8 +545,6 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     vitaeC = true;
     update(filteredVitae)
-    $('.html-change-project').text($(this).text())
-    $('.html-change-position').text('Position')
   })
   
 
