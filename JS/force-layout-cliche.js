@@ -412,20 +412,48 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     return result;
   }
 
-  var projects = {
-    ariaC: false,
-    doriaC: false,
-    greenbC: false,
-    innestoC: false,
-    lambrateC: false,
-    loretoC: false,
-    citydC: false,
-    molecolaC: false,
-    romanaC: false,
-    seimC: false,
-    torrebC: false,
-    vitaeC: false
-  }
+  // var projects = [{
+  //   ariaC: false,
+  //   doriaC: false,
+  //   greenbC: false,
+  //   innestoC: false,
+  //   lambrateC: false,
+  //   loretoC: false,
+  //   citydC: false,
+  //   molecolaC: false,
+  //   romanaC: false,
+  //   seimC: false,
+  //   torrebC: false,
+  //   vitaeC: false
+  // }]
+  // var projects = [
+  //   ariaC = false,
+  //   doriaC = false,
+  //   greenbC = false,
+  //   innestoC = false,
+  //   lambrateC = false,
+  //   loretoC = false,
+  //   citydC = false,
+  //   molecolaC = false,
+  //   romanaC = false,
+  //   seimC = false,
+  //   torrebC = false,
+  //   vitaeC = false
+  // ]
+  
+  var ariaC = false;
+  var doriaC = false;
+  var greenbC = false;
+  var innestoC = false;
+  var lambrateC = false;
+  var loretoC = false;
+  var citydC = false;
+  var molecolaC = false;
+  var romanaC = false;
+  var seimC = false;
+  var torrebC = false;
+  var vitaeC = false;
+  
 
 
   $('.filter_button').on('click', function(){
@@ -435,16 +463,14 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
     $('.html-change-position').text('Position inside render')
   })
 
-  console.log(projects)
-
   // Aria
   var filteredAria = filterJSON(data, "project", "Aria")
   
   $('#button_aria').on('click', function () {
+    ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
+
     ariaC = true;
     console.log(ariaC)
-    var filteTry = node.filter(function(d) { return d.project === 'Aria' })
-    console.log(filteTry)
     update(filteredAria)
   })
 
@@ -463,6 +489,7 @@ data = d3.json("./assets/data/data-id.json").then((data) => {
   $('#button_green_between').on('click', function () {
     ariaC = doriaC = greenbC = innestoC = lambrateC = loretoC = citydC = molecolaC = romanaC = seimC = torrebC = vitaeC = false;
     greenbC = true;
+    console.log(greenbC)
     update(filteredCrescenzago)
   })
   
